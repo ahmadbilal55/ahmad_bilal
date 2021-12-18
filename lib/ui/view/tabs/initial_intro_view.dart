@@ -4,8 +4,8 @@ import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+class InitialIntroView extends StatelessWidget {
+  InitialIntroView({Key? key}) : super(key: key);
 
   final themeManger = locator<ThemeManager>();
 
