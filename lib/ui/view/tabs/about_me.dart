@@ -28,7 +28,7 @@ class AboutMeView extends StatelessWidget {
                   color: Colors.black26, offset: Offset(3, 3), blurRadius: 20),
             ],
           ),
-          child: ListView(
+          child: Column(
             children: [
               ShowUp(
                 delay: 500,
@@ -52,16 +52,18 @@ class AboutMeView extends StatelessWidget {
               ),
               ShowUp(
                 delay: 900,
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      "Hi, I am Ahmad Bilal. Mobile application developer with multiple successful projects for clients from across the world. I try to make my clients as happy possible even if I have to put in some extra work.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: themeManger.primaryColor,
-                          fontSize: 24,
-                          fontFamily: themeManger.defaultFont),
+                child: SingleChildScrollView(
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        "Hi, I am Ahmad Bilal. Mobile application developer with multiple successful projects for clients from across the world. I try to make my clients as happy possible even if I have to put in some extra work.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: themeManger.primaryColor,
+                            fontSize: 24,
+                            fontFamily: themeManger.defaultFont),
+                      ),
                     ),
                   ),
                 ),

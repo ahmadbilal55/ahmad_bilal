@@ -1,4 +1,5 @@
 import 'package:ahmad_bilal/ui/view/tabs/about_me.dart';
+import 'package:ahmad_bilal/ui/view/tabs/contact_info.dart';
 import 'package:ahmad_bilal/ui/view/tabs/initial_intro_view.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class TabsView extends StatelessWidget {
           children: [
             InitialIntroView(),
             AboutMeView(),
+            ContactInfoView(),
           ],
         ),
       ),
