@@ -29,37 +29,82 @@ class ProjectsView extends StatelessWidget {
       height: screenHeight,
       child: Column(
         children: [
-          const ScreenTitle(
-            title: Strings.projects,
-            dark: true,
-            margin: EdgeInsets.all(16),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          Center(
-            child: SizedBox(
-              height: 340,
-              child: Scrollbar(
-                controller: model.scrollController,thickness: 10,
-                radius: Radius.zero,
-                child: ListView.builder(
-                  controller: model.scrollController,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: projects.length,
-                  itemBuilder: (context, index) => buildProjectCard(
-                    model,
-                    projects[index],
-                    onTap: model.onTapProject,
-                    elevated: model.elevateIndex == index,
-                    index: index,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          title(),
+          projectsList(model),
+          andWidget(),
+          thisProjectText()
         ],
       ),
+    );
+  }
+
+  ScreenTitle title() {
+    return const ScreenTitle(
+      title: Strings.projects,
+      dark: true,
+      margin: EdgeInsets.all(16),
+    );
+  }
+
+  Center projectsList(ProjectsViewModel model) {
+    return Center(
+      child: SizedBox(
+        height: 340,
+        child: Scrollbar(
+          controller: model.scrollController,
+          thickness: 10,
+          radius: Radius.zero,
+          child: ListView.builder(
+            controller: model.scrollController,
+            scrollDirection: Axis.horizontal,
+            itemCount: projects.length,
+            itemBuilder: (context, index) => buildProjectCard(
+              model,
+              projects[index],
+              onTap: model.onTapProject,
+              elevated: model.elevateIndex == index,
+              index: index,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Row andWidget() {
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            height: 4,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: MyThemeData.shadowColor,
+              borderRadius: BorderRadius.circular(2),
+            ),
+          ),
+        ),
+        const Text(
+          "AND",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+            color: MyThemeData.primaryColor,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            height: 4,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: MyThemeData.shadowColor,
+              borderRadius: BorderRadius.circular(2),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -137,6 +182,20 @@ class ProjectsView extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget thisProjectText() {
+    return  Padding(
+      padding:const EdgeInsets.all(32.0),
+      child: Text(
+        "I have built this website using Flutter Web.",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+          color: MyThemeData.primaryColor.withOpacity(0.5),
         ),
       ),
     );
