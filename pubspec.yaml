@@ -13,9 +13,11 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  responsive_builder: ^0.4.2
   stacked_services: ^0.8.16
   stacked: ^2.2.7+1
   lottie: ^1.2.1
+  animated_text_kit: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +34,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/icons/
+     - assets/images/
      - assets/animations/
 
   # An image asset can refer to one or more resolution-specific "variants", see

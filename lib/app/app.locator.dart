@@ -9,8 +9,6 @@
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 
-import 'utils/theme_manager.dart';
-
 final locator = StackedLocator.instance;
 
 void setupLocator({String? environment, EnvironmentFilter? environmentFilter}) {
@@ -19,5 +17,4 @@ void setupLocator({String? environment, EnvironmentFilter? environmentFilter}) {
       environment: environment, environmentFilter: environmentFilter);
 
 // Register dependencies
-  locator.registerSingleton(ThemeManager());
 }

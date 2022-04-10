@@ -9,12 +9,12 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import '../ui/view/tabs/tabs_view.dart';
+import '../ui/views/home/home_view.dart';
 
 class Routes {
-  static const String tabsView = '/';
+  static const String homeView = '/';
   static const all = <String>{
-    tabsView,
+    homeView,
   };
 }
 
@@ -22,14 +22,14 @@ class StackedRouter extends RouterBase {
   @override
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
-    RouteDef(Routes.tabsView, page: TabsView),
+    RouteDef(Routes.homeView, page: HomeView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
-    TabsView: (data) {
+    HomeView: (data) {
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const TabsView(),
+        builder: (context) => const HomeView(),
         settings: data,
       );
     },
