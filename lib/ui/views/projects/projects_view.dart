@@ -153,19 +153,25 @@ class ProjectsView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
-                child: Image.asset(
-                  project.logoPath,
-                  height: 150,
-                  width: 150,
+                child: Hero(
+                  tag: "${project.title}:${project.logoPath}",
+                  child: Image.asset(
+                    project.logoPath,
+                    height: 150,
+                    width: 150,
+                  ),
                 ),
               ),
-              Text(
-                project.title,
-                style: TextStyle(
-                  fontFamily: MyThemeData.defaultFont,
-                  color: project.projectPrimaryColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+              Hero(
+                tag: project.title,
+                child: Text(
+                  project.title,
+                  style: TextStyle(
+                    fontFamily: MyThemeData.defaultFont,
+                    color: project.projectPrimaryColor,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const SizedBox(

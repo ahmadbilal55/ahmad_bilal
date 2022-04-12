@@ -20,7 +20,10 @@ class Screenshot {
   final String path;
   final String description;
 
+  final String title;
+
   const Screenshot({
+    required this.title,
     required this.path,
     required this.description,
   });

@@ -8,13 +8,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked/stacked_annotations.dart';
 
+import '../models/project_model.dart';
 import '../ui/views/home/home_view.dart';
+import '../ui/views/projects/project_details/project_details_view.dart';
 
 class Routes {
   static const String homeView = '/';
+  static const String projectDetailsView = '/project-details-view';
   static const all = <String>{
     homeView,
+    projectDetailsView,
   };
 }
 
@@ -23,6 +28,7 @@ class StackedRouter extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.homeView, page: HomeView),
+    RouteDef(Routes.projectDetailsView, page: ProjectDetailsView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -33,5 +39,26 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
+    ProjectDetailsView: (data) {
+      var args = data.getArgs<ProjectDetailsViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ProjectDetailsView(
+          key: args.key,
+          project: args.projectModel,
+        ),
+        settings: data,
+      );
+    },
   };
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// ProjectDetailsView arguments holder class
+class ProjectDetailsViewArguments {
+  final Key? key;
+  final ProjectModel projectModel;
+  ProjectDetailsViewArguments({this.key, required this.projectModel});
 }

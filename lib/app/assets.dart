@@ -12,49 +12,114 @@ List<ProjectModel> projects = [
     description: "This is my portfolio",
     projectPrimaryColor: Colors.amberAccent,
     screenshots: [
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-    ],
-  ),const ProjectModel(
-    logoPath: Assets.profile,
-    title: 'Ahmad Bilal',
-    description: "This is my portfolio",
-    projectPrimaryColor: Colors.amberAccent,
-    screenshots: [
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-    ],
-  ),const ProjectModel(
-    logoPath: Assets.profile,
-    title: 'Ahmad Bilal',
-    description: "This is my portfolio",
-    projectPrimaryColor: Colors.amberAccent,
-    screenshots: [
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-    ],
-  ), const ProjectModel(
-    logoPath: Assets.profile,
-    title: 'Ahmad Bilal',
-    description: "This is my portfolio",
-    projectPrimaryColor: Colors.amberAccent,
-    screenshots: [
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-    ],
-  ), const ProjectModel(
-    logoPath: Assets.profile,
-    title: 'Ahmad Bilal',
-    description: "This is my portfolio",
-    projectPrimaryColor: Colors.amberAccent,
-    screenshots: [
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
-      Screenshot(path: Assets.profile, description: 'This My Portfolio'),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
     ],
   ),
+  const ProjectModel(
+    logoPath: Assets.profile,
+    title: 'Ahmad Bilal 1',
+    description: "This is my portfolio",
+    projectPrimaryColor: Colors.amberAccent,
+    screenshots: [
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+    ],
+  ),
+  const ProjectModel(
+    logoPath: Assets.profile,
+    title: 'Ahmad Bilal 2',
+    description: "This is my portfolio",
+    projectPrimaryColor: Colors.amberAccent,
+    screenshots: [
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+    ],
+  ),
+  const ProjectModel(
+    logoPath: Assets.profile,
+    title: 'Ahmad Bilal 3',
+    description: "This is my portfolio",
+    projectPrimaryColor: Colors.amberAccent,
+    screenshots: [
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+    ],
+  ),
+  const ProjectModel(
+    logoPath: Assets.profile,
+    title: 'Ahmad Bilal 4',
+    description: "This is my portfolio",
+    projectPrimaryColor: Colors.amberAccent,
+    screenshots: [
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+      Screenshot(
+        title: 'Screen Title',
+        path: Assets.profile,
+        description: 'This My Portfolio',
+      ),
+    ],
+  ),
+
 ];
