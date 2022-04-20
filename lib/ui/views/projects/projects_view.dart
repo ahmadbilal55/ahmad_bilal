@@ -180,7 +180,6 @@ class ProjectsView extends StatelessWidget {
               Text(
                 project.description,
                 style: const TextStyle(
-                  fontFamily: MyThemeData.defaultFont,
                   color: MyThemeData.primaryColor,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,

@@ -1,7 +1,7 @@
 import 'package:ahmad_bilal/app/utils/paths.dart';
-import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/ui/views/contact/contact_viewmodel.dart';
+import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -17,35 +17,13 @@ class ContactView extends StatelessWidget {
         color: MyThemeData.primaryColor,
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  Paths.email,
-                  height: 24,
-                  color: MyThemeData.secondaryBackground,
-                ),
-                const SizedBox(width: 16,),
-                const Text(
-                  Strings.emailAddress,
-                  style: TextStyle(
-                    color: MyThemeData.backgroundColor,
-                    fontFamily: MyThemeData.defaultFont,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                IconButton(
-                  onPressed: model.copyEmailToClipBoard,
-                  icon: Icon(
-                    Icons.copy,
-                    color: MyThemeData.backgroundColor.withOpacity(0.3),
-                  ),
-                ),
-              ],
+            const ScreenTitle(
+              title: "Contact",
+              margin: EdgeInsets.all(16),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 contactItem(
                   iconPath: Paths.email,

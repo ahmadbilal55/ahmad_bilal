@@ -69,7 +69,6 @@ class AboutView extends StatelessWidget {
                     const Text(
                       Strings.descIntro,
                       style: TextStyle(
-                        fontFamily: MyThemeData.defaultFont,
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: MyThemeData.white,
@@ -103,7 +102,6 @@ class AboutView extends StatelessWidget {
         Text(
           Strings.intro,
           style: TextStyle(
-            fontFamily: MyThemeData.defaultFont,
             fontSize: introFontSize,
             fontWeight: FontWeight.w500,
             color: MyThemeData.white,
