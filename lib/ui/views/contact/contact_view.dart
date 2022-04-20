@@ -1,8 +1,7 @@
-import 'package:ahmad_bilal/app/assets.dart';
+import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/ui/views/contact/contact_viewmodel.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -22,7 +21,7 @@ class ContactView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  Assets.email,
+                  Paths.email,
                   height: 24,
                   color: MyThemeData.secondaryBackground,
                 ),
@@ -49,19 +48,23 @@ class ContactView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 contactItem(
-                  iconPath: Assets.linkedIn,
+                  iconPath: Paths.email,
+                  onPressed: model.sendEmail,
+                ),
+                contactItem(
+                  iconPath: Paths.linkedIn,
                   onPressed: model.openLinkedIn,
                 ),
                 contactItem(
-                  iconPath: Assets.twitter,
+                  iconPath: Paths.twitter,
                   onPressed: model.openTwitter,
                 ),
                 contactItem(
-                  iconPath: Assets.upwork,
+                  iconPath: Paths.upwork,
                   onPressed: model.openUpwork,
                 ),
                 contactItem(
-                  iconPath: Assets.github,
+                  iconPath: Paths.github,
                   onPressed: model.openGitHub,
                 ),
               ],

@@ -6,6 +6,7 @@ import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/ui/views/about/about_view.dart';
 import 'package:ahmad_bilal/ui/views/contact/contact_view.dart';
 import 'package:ahmad_bilal/ui/views/projects/projects_view.dart';
+import 'package:ahmad_bilal/ui/views/skills/skills_view.dart';
 import 'package:ahmad_bilal/ui/views/testimonials/testimonials_view.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
@@ -81,6 +82,7 @@ class HomeView extends StatelessWidget {
                     height: screenHeight - screenHeight * 0.2,
                   ),
                   const AboutView(),
+                  const SkillsView(),
                   const ProjectsView(),
                   const TestimonialsView(),
                   const ContactView(),

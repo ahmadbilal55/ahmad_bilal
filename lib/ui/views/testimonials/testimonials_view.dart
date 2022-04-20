@@ -60,6 +60,7 @@ class TestimonialsView extends StatelessWidget {
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
                                   testimonials[index].clientName,
