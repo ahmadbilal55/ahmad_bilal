@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/app/utils/theme_manager.dart';
@@ -18,88 +16,88 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: MyThemeData.backgroundColor,
       body: SafeArea(
-        child: ScreenTypeLayout(
-          mobile: buildMobileLayout(),
-          desktop: buildDesktopLayout(context),
-          tablet: buildMobileLayout(),
+        child: Column(
+          children: [
+            Expanded(
+              child: Stack(
+                children: [
+                  Center(
+                    child: Container(
+                      height: 450,
+                      width: 300,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 32, vertical: 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          LottieBuilder.asset(Paths.codingAnimation,
+                              height: screenHeight * 0.3),
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          const Text(
+                            Strings.name,
+                            style: TextStyle(
+                              fontSize: 42,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: MyThemeData.defaultFont,
+                              color: MyThemeData.primaryColor,
+                            ),
+                          ),
+                          AnimatedTextKit(
+                            repeatForever: true,
+                            animatedTexts: [
+                              buildTypewriterAnimatedText(
+                                context: context,
+                                  text: 'Flutter Developer'),
+                              buildTypewriterAnimatedText(
+                                  context: context,
+                                  text: 'Android Developer'),
+                              buildTypewriterAnimatedText(
+                                  context: context,
+                                  text: 'Firebase Expert'),
+                              buildTypewriterAnimatedText(
+                                  context: context,
+                                  text: 'NodeJs Developer'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ListView(
+                    children: [
+                      SizedBox(
+                        height: screenHeight - screenHeight * 0.2,
+                      ),
+                      const AboutView(),
+                      const SkillsView(),
+                      const ProjectsView(),
+                      const TestimonialsView(),
+                      const ContactView(),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  Widget buildMobileLayout() {
-    return const SizedBox();
-  }
-
-  Widget buildDesktopLayout(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    return Column(
-      children: [
-        Expanded(
-          child: Stack(
-            children: [
-              Center(
-                child: Container(
-                  height: 450,
-                  width: 300,
-                  margin: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      LottieBuilder.asset(Paths.codingAnimation,
-                          height: screenHeight * 0.3),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      const Text(
-                        Strings.name,
-                        style: TextStyle(
-                          fontSize: 42,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: MyThemeData.defaultFont,
-                          color: MyThemeData.primaryColor,
-                        ),
-                      ),
-                      AnimatedTextKit(
-                        repeatForever: true,
-                        animatedTexts: [
-                          buildTypewriterAnimatedText(text: 'Flutter Developer'),
-                          buildTypewriterAnimatedText(text: 'Android Developer'),
-                          buildTypewriterAnimatedText(text: 'Firebase Expert'),
-                          buildTypewriterAnimatedText(text: 'NodeJs Developer'),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              ListView(
-                children: [
-                  SizedBox(
-                    height: screenHeight - screenHeight * 0.2,
-                  ),
-                  const AboutView(),
-                  const SkillsView(),
-                  const ProjectsView(),
-                  const TestimonialsView(),
-                  const ContactView(),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  TypewriterAnimatedText buildTypewriterAnimatedText({required String text}) {
+  TypewriterAnimatedText buildTypewriterAnimatedText(
+      {required BuildContext context, required String text}) {
+    final fontSize = getValueForScreenType(
+        context: context, mobile: 24, desktop: 30, tablet: 30);
     return TypewriterAnimatedText(
       text,
-      textStyle: const TextStyle(
-        fontSize: 30,
+      textStyle:  TextStyle(
+        fontSize: fontSize.toDouble(),
         fontWeight: FontWeight.bold,
         fontFamily: MyThemeData.defaultFont,
         color: MyThemeData.secondaryBackground,

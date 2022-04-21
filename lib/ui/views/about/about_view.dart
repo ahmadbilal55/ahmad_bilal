@@ -13,7 +13,7 @@ class AboutView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       mobile: const SizedBox(),
-      tablet: const SizedBox(),
+      tablet: buildDesktopLayout(context),
       desktop: buildDesktopLayout(context),
     );
   }
