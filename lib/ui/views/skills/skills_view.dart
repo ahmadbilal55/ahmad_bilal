@@ -16,7 +16,7 @@ class SkillsView extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: ScreenTypeLayout(
         mobile: const SizedBox(),
-        tablet: const SizedBox(),
+        tablet: buildDesktopLayout(context, screenSize),
         desktop: buildDesktopLayout(context, screenSize),
       ),
     );

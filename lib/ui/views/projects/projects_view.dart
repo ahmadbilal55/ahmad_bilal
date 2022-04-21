@@ -40,7 +40,7 @@ class ProjectsView extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
       color: MyThemeData.white,
-      height: screenHeight,
+      constraints:BoxConstraints(minHeight:  screenHeight),
       child: Column(
         children: [
           title(),
@@ -140,9 +140,9 @@ class ProjectsView extends StatelessWidget {
     int index = 0,
   }) {
     final cardSize = getValueForScreenType(
-        context: context, mobile: 150, desktop: 350, tablet: 250);
+        context: context, mobile: 200, desktop: 350, tablet: 250);
     final imageSize = getValueForScreenType(
-        context: context, mobile: 50, desktop: 100, tablet: 150);
+        context: context, mobile: 50, desktop: 150, tablet:100 );
 
     return MouseRegion(
       onExit: (e) => model.mouseEnter(null),
