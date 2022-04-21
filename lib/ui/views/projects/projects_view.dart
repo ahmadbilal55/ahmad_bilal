@@ -15,14 +15,28 @@ class ProjectsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<ProjectsViewModel>.reactive(
       builder: (context, model, child) => ScreenTypeLayout(
-          mobile: const SizedBox(),
-          tablet: const SizedBox(),
-          desktop: buildDesktopLayout(model, context)),
+        mobile: buildLayout(
+          model,
+          context,
+          isDesktop: true,
+        ),
+        tablet: buildLayout(
+          model,
+          context,
+          isDesktop: true,
+        ),
+        desktop: buildLayout(
+          model,
+          context,
+          isDesktop: true,
+        ),
+      ),
       viewModelBuilder: () => ProjectsViewModel(),
     );
   }
 
-  Widget buildDesktopLayout(ProjectsViewModel model, BuildContext context) {
+  Widget buildLayout(ProjectsViewModel model, BuildContext context,
+      {bool isDesktop = false}) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
       color: MyThemeData.white,
@@ -30,9 +44,13 @@ class ProjectsView extends StatelessWidget {
       child: Column(
         children: [
           title(),
-          projectsList(model),
+          projectsList(
+            context,
+            model,
+            isDesktop: isDesktop,
+          ),
           andWidget(),
-          thisProjectText()
+          thisProjectText(context)
         ],
       ),
     );
@@ -46,19 +64,24 @@ class ProjectsView extends StatelessWidget {
     );
   }
 
-  Center projectsList(ProjectsViewModel model) {
-    return Center(
-      child: SizedBox(
-        height: 340,
-        child: Scrollbar(
-          controller: model.scrollController,
-          thickness: 10,
-          radius: Radius.zero,
+  Widget projectsList(BuildContext context, ProjectsViewModel model,
+      {bool isDesktop = false}) {
+    final height = getValueForScreenType(
+        context: context, mobile: 200, desktop: 340, tablet: 300);
+    return Scrollbar(
+      controller: model.scrollController,
+      thickness: isDesktop ? 10 : 0,
+      interactive: false,
+      radius: Radius.zero,
+      child: Center(
+        child: SizedBox(
+          height: height.toDouble(),
           child: ListView.builder(
             controller: model.scrollController,
             scrollDirection: Axis.horizontal,
             itemCount: projects.length,
             itemBuilder: (context, index) => buildProjectCard(
+              context,
               model,
               projects[index],
               onTap: model.onTapProject,
@@ -109,12 +132,18 @@ class ProjectsView extends StatelessWidget {
   }
 
   Widget buildProjectCard(
+    BuildContext context,
     ProjectsViewModel model,
     ProjectModel project, {
     Function(ProjectModel)? onTap,
     bool elevated = false,
     int index = 0,
   }) {
+    final cardSize = getValueForScreenType(
+        context: context, mobile: 150, desktop: 350, tablet: 250);
+    final imageSize = getValueForScreenType(
+        context: context, mobile: 50, desktop: 100, tablet: 150);
+
     return MouseRegion(
       onExit: (e) => model.mouseEnter(null),
       onEnter: (e) => model.mouseEnter(index),
@@ -130,8 +159,7 @@ class ProjectsView extends StatelessWidget {
             14,
           ),
           duration: const Duration(milliseconds: 100),
-          height: 300,
-          width: 300,
+          width: cardSize.toDouble(),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: MyThemeData.white,
@@ -157,8 +185,8 @@ class ProjectsView extends StatelessWidget {
                   tag: "${project.title}:${project.logoPath}",
                   child: Image.asset(
                     project.logoPath,
-                    height: 150,
-                    width: 150,
+                    height: imageSize.toDouble(),
+                    width: imageSize.toDouble(),
                   ),
                 ),
               ),
@@ -192,9 +220,15 @@ class ProjectsView extends StatelessWidget {
     );
   }
 
-  Widget thisProjectText() {
-    return  Padding(
-      padding:const EdgeInsets.all(32.0),
+  Widget thisProjectText(BuildContext context) {
+    final padding = getValueForScreenType<EdgeInsets>(
+      context: context,
+      mobile: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      tablet: const EdgeInsets.all(16),
+      desktop: const EdgeInsets.all(32),
+    );
+    return Padding(
+      padding: padding,
       child: Text(
         "I have built this website using Flutter Web.",
         style: TextStyle(
