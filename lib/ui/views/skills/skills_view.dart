@@ -15,7 +15,7 @@ class SkillsView extends StatelessWidget {
       color: MyThemeData.backgroundColor,
       padding: const EdgeInsets.all(16),
       child: ScreenTypeLayout(
-        mobile: const SizedBox(),
+        mobile: buildMobileLayout(context, screenSize),
         tablet: buildDesktopLayout(context, screenSize),
         desktop: buildDesktopLayout(context, screenSize),
       ),
@@ -42,7 +42,7 @@ class SkillsView extends StatelessWidget {
                 child: _buildSkillCard(
                   context,
                   flutterSkill,
-                  const BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     bottomLeft: Radius.circular(16),
                   ),
@@ -60,7 +60,7 @@ class SkillsView extends StatelessWidget {
                 child: _buildSkillCard(
                   context,
                   firebaseSkill,
-                  const BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(16),
                     bottomRight: Radius.circular(16),
                   ),
@@ -76,8 +76,65 @@ class SkillsView extends StatelessWidget {
     );
   }
 
+  Widget buildMobileLayout(BuildContext context, Size screenSize) {
+    final border = Border.all(width: 1, color: MyThemeData.secondaryBackground);
+    final borderRadius = BorderRadius.circular(16);
+
+    return Container(
+      color: MyThemeData.backgroundColor,
+      constraints: BoxConstraints(minHeight: screenSize.height),
+      child: Column(
+        children: [
+          const ScreenTitle(
+            title: 'Skills',
+            dark: true,
+            margin: EdgeInsets.all(16),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            child: Center(
+              child: IntrinsicHeight(
+                child: Row(
+                  children: [
+                    _buildSkillCard(
+                      context,
+                      flutterSkill,
+                      border: border,
+                      borderRadius: borderRadius,
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    _buildSkillCard(
+                      context,
+                      androidSkill,
+                      border: border,
+                      borderRadius: borderRadius,
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    _buildSkillCard(
+                      context,
+                      firebaseSkill,
+                      border: border,
+                      borderRadius: borderRadius,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildSkillCard(BuildContext context, Skill skill,
-      [BorderRadius? borderRadius]) {
+      {BoxConstraints? constraints,
+      BoxBorder? border,
+      BorderRadius? borderRadius}) {
     final logoSize = getValueForScreenType<double>(
       context: context,
       mobile: 70,
@@ -110,8 +167,10 @@ class SkillsView extends StatelessWidget {
     );
 
     return Container(
-      padding: const EdgeInsets.only(bottom: 64),
+      constraints: constraints,
+      padding: const EdgeInsets.only(bottom: 64, right: 8, left: 8),
       decoration: BoxDecoration(
+        border: border,
         color: Colors.white,
         borderRadius: borderRadius,
         boxShadow: const [
@@ -149,6 +208,7 @@ class SkillsView extends StatelessWidget {
           ),
           Container(
             height: 125,
+            width: 130,
             padding: EdgeInsets.symmetric(horizontal: sloganPadding),
             child: Center(
               child: Text(
