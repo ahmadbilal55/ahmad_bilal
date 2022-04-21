@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
+import 'package:flutter/animation.dart';
 import 'package:stacked/stacked.dart';
 
 class TestimonialsViewModel extends BaseViewModel {
@@ -14,9 +15,9 @@ class TestimonialsViewModel extends BaseViewModel {
 
   void moveForward(bool forward) {
     if (forward) {
-      controller.nextPage();
+      controller.nextPage(curve: Curves.easeOutCubic);
     } else {
-      controller.previousPage();
+      controller.previousPage(curve: Curves.easeOutCubic);
     }
   }
 }

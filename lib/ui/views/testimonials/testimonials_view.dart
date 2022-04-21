@@ -18,7 +18,7 @@ class TestimonialsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<TestimonialsViewModel>.reactive(
       builder: (context, model, child) => ScreenTypeLayout(
-        mobile: const SizedBox(),
+        mobile: buildLayout(context, model, ),
         desktop: buildLayout(context, model),
         tablet: buildLayout(context, model),
       ),
@@ -28,9 +28,14 @@ class TestimonialsView extends StatelessWidget {
 
   Widget buildLayout(BuildContext context, TestimonialsViewModel model) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final maxTestimonyLines = getValueForScreenType(context: context, mobile: 6,desktop: 9,tablet: 6);
-    final starSize = getValueForScreenType<double>(context: context, mobile: 16,desktop: 20,tablet: 18);
-    final sliderHeight = getValueForScreenType<double>(context: context, mobile: 260,desktop: 320,tablet: 290);
+    final maxTestimonyLines = getValueForScreenType(
+        context: context, mobile: 6, desktop: 9, tablet: 6);
+    final starSize = getValueForScreenType<double>(
+        context: context, mobile: 16, desktop: 20, tablet: 18);
+    final sliderHeight = getValueForScreenType<double>(
+        context: context, mobile: 260, desktop: 320, tablet: 290);
+    final viewPortFraction = getValueForScreenType<double>(
+        context: context, mobile: 0.8, desktop: 0.3, tablet: 0.5);
 
     return Container(
       constraints: BoxConstraints(minHeight: screenHeight * 0.8),
@@ -51,7 +56,7 @@ class TestimonialsView extends StatelessWidget {
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 15),
               enlargeCenterPage: true,
-              viewportFraction: 0.3,
+              viewportFraction: viewPortFraction,
               height: sliderHeight,
             ),
             itemBuilder: (context, index, _) =>
