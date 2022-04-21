@@ -9,7 +9,7 @@ class ScreenTitle extends StatelessWidget {
   final EdgeInsets margin;
   @override
   Widget build(BuildContext context) {
-    final fontSize = getValueForScreenType<double>(context: context, mobile: 18,desktop: 36,tablet: 24);
+    final fontSize = getValueForScreenType<double>(context: context, mobile: 30,desktop: 36,tablet: 30);
     return  Padding(
       padding: margin,
       child: Text(

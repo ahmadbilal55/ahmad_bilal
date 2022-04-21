@@ -18,12 +18,10 @@ class ProjectsView extends StatelessWidget {
         mobile: buildLayout(
           model,
           context,
-          isDesktop: true,
         ),
         tablet: buildLayout(
           model,
           context,
-          isDesktop: true,
         ),
         desktop: buildLayout(
           model,
@@ -40,14 +38,19 @@ class ProjectsView extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
       color: MyThemeData.white,
-      constraints:BoxConstraints(minHeight:  screenHeight),
+      constraints: BoxConstraints(
+        minHeight: screenHeight - screenHeight * 0.28,
+      ),
       child: Column(
         children: [
           title(),
-          projectsList(
-            context,
-            model,
-            isDesktop: isDesktop,
+          Align(
+            alignment: Alignment.center,
+            child: projectsList(
+              context,
+              model,
+              isDesktop: isDesktop,
+            ),
           ),
           andWidget(),
           thisProjectText(context)
@@ -66,8 +69,8 @@ class ProjectsView extends StatelessWidget {
 
   Widget projectsList(BuildContext context, ProjectsViewModel model,
       {bool isDesktop = false}) {
-    final height = getValueForScreenType(
-        context: context, mobile: 200, desktop: 340, tablet: 300);
+    final height = getValueForScreenType<double>(
+        context: context, mobile: 280, desktop: 340, tablet: 300);
     return Scrollbar(
       controller: model.scrollController,
       thickness: isDesktop ? 10 : 0,
@@ -75,7 +78,7 @@ class ProjectsView extends StatelessWidget {
       radius: Radius.zero,
       child: Center(
         child: SizedBox(
-          height: height.toDouble(),
+          height: height,
           child: ListView.builder(
             controller: model.scrollController,
             scrollDirection: Axis.horizontal,
@@ -85,6 +88,7 @@ class ProjectsView extends StatelessWidget {
               model,
               projects[index],
               onTap: model.onTapProject,
+              isDesktop: isDesktop,
               elevated: model.elevateIndex == index,
               index: index,
             ),
@@ -138,11 +142,37 @@ class ProjectsView extends StatelessWidget {
     Function(ProjectModel)? onTap,
     bool elevated = false,
     int index = 0,
+    bool isDesktop = false,
   }) {
-    final cardSize = getValueForScreenType(
-        context: context, mobile: 200, desktop: 350, tablet: 250);
-    final imageSize = getValueForScreenType(
-        context: context, mobile: 50, desktop: 150, tablet:100 );
+    final cardSize = getValueForScreenType<double>(
+      context: context,
+      mobile: 200,
+      desktop: 350,
+      tablet: 250,
+    );
+    final imageSize = getValueForScreenType<double>(
+      context: context,
+      mobile: 50,
+      desktop: 150,
+      tablet: 100,
+    );
+    final blurRadius = getValueForScreenType<double>(
+      context: context,
+      mobile: 4,
+      desktop: 8,
+      tablet: 12,
+    );
+    final blurSpread = getValueForScreenType<double>(
+      context: context,
+      mobile: 2,
+      desktop: 4,
+      tablet: 6,
+    );
+    final shadowOffset = getValueForScreenType<Offset>(
+        context: context,
+        mobile: const Offset(1, 1),
+        desktop: const Offset(2, 2),
+        tablet: const Offset(4, 4));
 
     return MouseRegion(
       onExit: (e) => model.mouseEnter(null),
@@ -159,7 +189,7 @@ class ProjectsView extends StatelessWidget {
             14,
           ),
           duration: const Duration(milliseconds: 100),
-          width: cardSize.toDouble(),
+          width: cardSize,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: MyThemeData.white,
@@ -167,12 +197,13 @@ class ProjectsView extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
-                color: elevated
+                color: elevated && isDesktop
                     ? project.projectPrimaryColor.withOpacity(0.2)
                     : MyThemeData.shadowColor,
-                blurRadius: elevated ? 4 : 2,
-                spreadRadius: elevated ? 12 : 2,
-                offset: elevated ? const Offset(0, 0) : const Offset(4, 4),
+                blurRadius: elevated ? blurRadius : 2,
+                spreadRadius: elevated ? blurSpread : 2,
+                offset:
+                    isDesktop & elevated ? const Offset(0, 0) : shadowOffset,
               ),
             ],
           ),
@@ -185,20 +216,23 @@ class ProjectsView extends StatelessWidget {
                   tag: "${project.title}:${project.logoPath}",
                   child: Image.asset(
                     project.logoPath,
-                    height: imageSize.toDouble(),
-                    width: imageSize.toDouble(),
+                    height: imageSize,
+                    width: imageSize,
                   ),
                 ),
               ),
               Hero(
                 tag: project.title,
-                child: Text(
-                  project.title,
-                  style: TextStyle(
-                    fontFamily: MyThemeData.defaultFont,
-                    color: project.projectPrimaryColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minWidth: 90),
+                  child: Text(
+                    project.title,
+                    style: TextStyle(
+                      fontFamily: MyThemeData.defaultFont,
+                      color: project.projectPrimaryColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

@@ -12,17 +12,17 @@ class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: const SizedBox(),
-      tablet: buildDesktopLayout(context),
-      desktop: buildDesktopLayout(context),
+      mobile: buildLayout(context),
+      tablet: buildLayout(context),
+      desktop: buildLayout(context),
     );
   }
 
-  Widget buildDesktopLayout(BuildContext context) {
+  Widget buildLayout(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
       constraints: BoxConstraints(
-        minHeight: screenHeight - 55,
+        minHeight: screenHeight,
       ),
       color: MyThemeData.secondaryBackground,
       child: ClipRRect(
@@ -38,7 +38,7 @@ class AboutView extends StatelessWidget {
                 painter: CirclePainter(
                   offset: const Offset(0, 600),
                   radius: screenHeight * 0.3,
-                  color: MyThemeData.primaryColor,
+                  color: MyThemeData.primaryColor.withOpacity(0.5),
                 ),
               ),
             ),
