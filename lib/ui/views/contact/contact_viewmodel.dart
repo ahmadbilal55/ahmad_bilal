@@ -33,7 +33,7 @@ class ContactViewModel extends BaseViewModel {
   void sendEmail() {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'smith@example.com',
+      path: 'ahm4d.bilal@gmail.com',
       query: _encodeQueryParameters(<String, String>{
         'subject': 'Proposal for a project'
       }),

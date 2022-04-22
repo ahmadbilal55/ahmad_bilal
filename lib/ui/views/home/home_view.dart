@@ -35,7 +35,7 @@ class HomeView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           LottieBuilder.asset(Paths.codingAnimation,
-                              height: screenHeight * 0.3),
+                              height: screenHeight * 0.3,frameRate: FrameRate.max,),
                           const SizedBox(
                             height: 16,
                           ),

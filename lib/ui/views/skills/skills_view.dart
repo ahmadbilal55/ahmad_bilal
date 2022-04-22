@@ -208,7 +208,7 @@ class SkillsView extends StatelessWidget {
           ),
           Container(
             height: 125,
-            width: 130,
+            width: 300,
             padding: EdgeInsets.symmetric(horizontal: sloganPadding),
             child: Center(
               child: Text(

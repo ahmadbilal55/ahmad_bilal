@@ -25,7 +25,7 @@ List<ProjectModel> get projects {
       '${Paths.shades}/13.png',
     ],
     description:
-        'Request beauty services like massage, hair cut etc. at your doorstep',
+        'Provide beauty services to your favorite clients.',
     logoPath: '${Paths.shades}/shades.png',
     projectPrimaryColor: Color(0xFFa94c4c),
   );
@@ -110,7 +110,7 @@ final flutterSkill = Skill(
 final firebaseSkill = Skill(
   logo: "assets/images/firebase.png",
   title: " Firebase Expert ",
-  experience: "2020 - Present (${DateTime.now().year - 2019} Years)",
+  experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
   description:
       "I know in and out of firebase and all of its services, what are it’s limitations and what features it provides that could help us reach our dream database easily. Speaking of dream database, it should be optimised for speed, secure so users could only access what they are intended to and cost effective so we don’t do any extra reads & writes. Achieving all three is much more difficult than it seems and I have seen companies struggling with it. With my great experience in this field, I provide best solutions possible.",
   slogan:

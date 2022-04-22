@@ -247,6 +247,16 @@ class ProjectsView extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
+              const Divider(),
+              Center(
+                child: Text(
+                  Strings.viewMore,
+                  style: TextStyle(
+                    color: project.projectPrimaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
