@@ -6,7 +6,8 @@ final darkThemeData = ThemeData(
     dividerColor: const Color(0x80000000),
     backgroundColor: const Color(0xFFFFFFFF),
     accentColor: const Color(0xFF00AEFF),
-    cardColor: const Color(0xFFFFFFFF),canvasColor: const Color(0xFF00AEFF),
+    cardColor: const Color(0xFFFFFFFF),
+    canvasColor: const Color(0xFF00AEFF),
     textTheme: const TextTheme(
       ///Used for screen title with dark background
       headline1: TextStyle(
@@ -82,7 +83,7 @@ final darkThemeData = ThemeData(
 
 final lightThemeData = ThemeData(
   brightness: Brightness.light,
-    canvasColor: const Color(0xFF00AEFF),
+  canvasColor: const Color(0xFF00AEFF),
   primaryColor: const Color(0xFF00AEFF),
   dividerColor: const Color(0x80FFFFFF),
   backgroundColor: const Color(0xFF212121),

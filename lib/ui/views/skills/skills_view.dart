@@ -76,7 +76,7 @@ class SkillsView extends StatelessWidget {
   }
 
   Widget buildMobileLayout(BuildContext context, Size screenSize) {
-    final border = Border.all(width: 1, color: Theme.of(context).dividerColor);
+    final border = Border.all(width: 1, color: Theme.of(context).canvasColor);
     final borderRadius = BorderRadius.circular(16);
 
     return Container(
@@ -201,7 +201,7 @@ class SkillsView extends StatelessWidget {
             skill.experience,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).canvasColor,
               fontSize: experienceTextSize,
             ),
           ),
@@ -220,7 +220,7 @@ class SkillsView extends StatelessWidget {
           Text(
             "Skills",
             style: TextStyle(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).canvasColor,
               fontSize: titleTextSize,
               fontWeight: FontWeight.bold,
             ),
