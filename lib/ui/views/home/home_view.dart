@@ -97,6 +97,7 @@ class HomeView extends StatelessWidget {
         context: context, mobile: 24, desktop: 30, tablet: 30);
     return TypewriterAnimatedText(
       text,
+      speed:const Duration(milliseconds: 75),
       textStyle: TextStyle(
         fontSize: fontSize.toDouble(),
         fontWeight: FontWeight.bold,
