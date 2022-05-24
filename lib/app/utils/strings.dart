@@ -19,5 +19,5 @@ class Strings {
       "Flutter developer with an impressive skill set. I have an experience of above 2 years with many successful projects. I am passionate about developing scalable, smooth and bug free apps.";
 
   static const String descIntro =
-      "I Started my internship at Stack One (Pvt) Ltd, a company based in Islamabad, Pakistan. Everything that I know about programming is self taught. I am very excited about coding, while following the best coding practices and maintaining a very clean code, making it hard for bugs to hide.";
+      "Everything that I know about coding is self taught. I am very excited about coding, while following the best coding practices and maintaining a very clean code, making it hard for bugs to hide. Get in touch and we'll make a great app for you!";
 }

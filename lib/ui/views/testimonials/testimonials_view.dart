@@ -1,6 +1,5 @@
 import 'package:ahmad_bilal/app/assets.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
-import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/ui/views/testimonials/testimonials_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -18,7 +17,10 @@ class TestimonialsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<TestimonialsViewModel>.reactive(
       builder: (context, model, child) => ScreenTypeLayout(
-        mobile: buildLayout(context, model, ),
+        mobile: buildLayout(
+          context,
+          model,
+        ),
         desktop: buildLayout(context, model),
         tablet: buildLayout(context, model),
       ),
@@ -39,7 +41,7 @@ class TestimonialsView extends StatelessWidget {
 
     return Container(
       constraints: BoxConstraints(minHeight: screenHeight * 0.8),
-      color: Colors.white,
+      color: Theme.of(context).backgroundColor,
       child: Column(
         children: [
           const ScreenTitle(
@@ -68,11 +70,12 @@ class TestimonialsView extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.all(16),
                           padding: const EdgeInsets.all(16),
-                          decoration: const BoxDecoration(
-                            color: MyThemeData.backgroundColor,
+                          decoration:  BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            borderRadius: BorderRadius.circular(12),
                             boxShadow: [
                               BoxShadow(
-                                color: MyThemeData.shadowColor,
+                                color: Theme.of(context).shadowColor,
                                 blurRadius: 12,
                                 spreadRadius: 8,
                               )
@@ -82,14 +85,8 @@ class TestimonialsView extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                testimonials[index].clientName,
-                                style: const TextStyle(
-                                    fontSize: 18,
-                                    color: MyThemeData.primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: MyThemeData.defaultFont),
-                              ),
+                              Text(testimonials[index].clientName,
+                                  style: Theme.of(context).textTheme.headline5),
                               const SizedBox(
                                 height: 8,
                               ),
@@ -97,11 +94,7 @@ class TestimonialsView extends StatelessWidget {
                                 testimonials[index].testimony,
                                 maxLines: maxTestimonyLines,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontSize: 14,
-                                    color: MyThemeData.primaryColor,
-                                    fontFamily: MyThemeData.defaultFont,
-                                    overflow: TextOverflow.ellipsis),
+                                style: Theme.of(context).textTheme.bodySmall,
                               ),
                               const SizedBox(
                                 height: 8,
@@ -124,7 +117,7 @@ class TestimonialsView extends StatelessWidget {
               IconButton(
                 onPressed: () => model.moveForward(false),
                 icon: const Icon(Icons.arrow_back_ios),
-                color: MyThemeData.shadowColor,
+                color: Theme.of(context).dividerColor,
               ),
               const SizedBox(
                 width: 16,
@@ -132,11 +125,11 @@ class TestimonialsView extends StatelessWidget {
               AnimatedSmoothIndicator(
                 activeIndex: model.currentIndex,
                 count: testimonials.length,
-                effect: const ColorTransitionEffect(
+                effect:  ColorTransitionEffect(
                     dotHeight: 12,
                     dotWidth: 12,
-                    activeDotColor: MyThemeData.secondaryBackground,
-                    dotColor: MyThemeData.shadowColor),
+                    activeDotColor: Theme.of(context).primaryColor,
+                    dotColor: Theme.of(context).dividerColor),
               ),
               const SizedBox(
                 width: 16,
@@ -144,7 +137,7 @@ class TestimonialsView extends StatelessWidget {
               IconButton(
                 onPressed: () => model.moveForward(true),
                 icon: const Icon(Icons.arrow_forward_ios),
-                color: MyThemeData.shadowColor,
+                color: Theme.of(context).dividerColor,
               ),
             ],
           )

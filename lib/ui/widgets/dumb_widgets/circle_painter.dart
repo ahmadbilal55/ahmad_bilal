@@ -1,4 +1,3 @@
-import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:flutter/material.dart';
 
 
@@ -7,8 +6,9 @@ class CirclePainter extends CustomPainter {
   final Offset offset;
   final double radius;
 
-  const CirclePainter({
-    this.color = MyThemeData.primaryColor,
+
+   CirclePainter({
+    required this.color,
     this.offset = const Offset(200, 200),
     this.radius = 100,
   });

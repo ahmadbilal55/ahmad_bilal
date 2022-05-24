@@ -1,4 +1,3 @@
-import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/models/project_model.dart';
 import 'package:ahmad_bilal/ui/views/projects/project_details/project_details_viewmodel.dart';
 import 'package:flutter/material.dart';
@@ -13,14 +12,14 @@ class ProjectDetailsView extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     return ViewModelBuilder<ProjectDetailsViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-        backgroundColor: MyThemeData.backgroundColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         body: SafeArea(
           child: Stack(
             children: [
               Center(
                 child: screenshots(model, screenHeight),
               ),
-              header(model),
+              header(context,model),
             ],
           ),
         ),
@@ -89,7 +88,7 @@ class ProjectDetailsView extends StatelessWidget {
     );
   }
 
-  Widget header(ProjectDetailsViewModel model) {
+  Widget header(BuildContext context,ProjectDetailsViewModel model) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -97,8 +96,8 @@ class ProjectDetailsView extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            MyThemeData.primaryColor.withOpacity(0.4),
-            MyThemeData.primaryColor.withOpacity(0),
+            Theme.of(context).primaryColor.withOpacity(0.4),
+            Theme.of(context).primaryColor.withOpacity(0),
           ],
         ),
       ),
@@ -133,7 +132,6 @@ class ProjectDetailsView extends StatelessWidget {
                 style: TextStyle(
                   color: project.projectPrimaryColor,
                   fontSize: 18,
-                  fontFamily: MyThemeData.defaultFont,
                   fontWeight: FontWeight.bold,
                 ),
               ),

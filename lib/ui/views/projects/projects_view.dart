@@ -1,6 +1,5 @@
 import 'package:ahmad_bilal/app/assets.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
-import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/models/project_model.dart';
 import 'package:ahmad_bilal/ui/views/projects/projects_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
@@ -37,7 +36,7 @@ class ProjectsView extends StatelessWidget {
       {bool isDesktop = false}) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      color: MyThemeData.white,
+      color: Theme.of(context).backgroundColor,
       constraints: BoxConstraints(
         minHeight: screenHeight - screenHeight * 0.28,
       ),
@@ -52,7 +51,7 @@ class ProjectsView extends StatelessWidget {
               isDesktop: isDesktop,
             ),
           ),
-          andWidget(),
+          andWidget(context),
           thisProjectText(context)
         ],
       ),
@@ -98,7 +97,7 @@ class ProjectsView extends StatelessWidget {
     );
   }
 
-  Row andWidget() {
+  Row andWidget(BuildContext context) {
     return Row(
       children: [
         Expanded(
@@ -107,18 +106,14 @@ class ProjectsView extends StatelessWidget {
             height: 4,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: MyThemeData.shadowColor,
+              color: Theme.of(context).shadowColor,
               borderRadius: BorderRadius.circular(2),
             ),
           ),
         ),
-        const Text(
+         Text(
           "AND",
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-            color: MyThemeData.primaryColor,
-          ),
+          style: Theme.of(context).textTheme.headline4,
         ),
         Expanded(
           child: Container(
@@ -126,7 +121,7 @@ class ProjectsView extends StatelessWidget {
             height: 4,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: MyThemeData.shadowColor,
+              color: Theme.of(context).shadowColor,
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -192,14 +187,14 @@ class ProjectsView extends StatelessWidget {
           width: cardSize,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: MyThemeData.white,
+            color: Theme.of(context).backgroundColor,
             border: Border.all(color: project.projectPrimaryColor),
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
                 color: elevated && isDesktop
                     ? project.projectPrimaryColor.withOpacity(0.2)
-                    : MyThemeData.shadowColor,
+                    : Theme.of(context).shadowColor,
                 blurRadius: elevated ? blurRadius : 2,
                 spreadRadius: elevated ? blurSpread : 2,
                 offset:
@@ -228,7 +223,6 @@ class ProjectsView extends StatelessWidget {
                   child: Text(
                     project.title,
                     style: TextStyle(
-                      fontFamily: MyThemeData.defaultFont,
                       color: project.projectPrimaryColor,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -241,8 +235,8 @@ class ProjectsView extends StatelessWidget {
               ),
               Text(
                 project.description,
-                style: const TextStyle(
-                  color: MyThemeData.primaryColor,
+                style: TextStyle(
+                  color: Theme.of(context).textTheme.bodyText1!.color,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
@@ -278,7 +272,7 @@ class ProjectsView extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 18,
-          color: MyThemeData.primaryColor.withOpacity(0.5),
+          color: Theme.of(context).dividerColor,
         ),
       ),
     );

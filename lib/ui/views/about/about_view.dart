@@ -1,6 +1,5 @@
 import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
-import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/circle_painter.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:flutter/material.dart';
@@ -24,12 +23,13 @@ class AboutView extends StatelessWidget {
       constraints: BoxConstraints(
         minHeight: screenHeight,
       ),
-      color: MyThemeData.secondaryBackground,
+      color: Theme.of(context).accentColor,
       child: ClipRRect(
         child: Stack(
           children: [
             CustomPaint(
               painter: CirclePainter(
+                color: Theme.of(context).primaryColor,
                   offset: const Offset(0, 0), radius: screenHeight * 0.2),
             ),
             Align(
@@ -38,7 +38,7 @@ class AboutView extends StatelessWidget {
                 painter: CirclePainter(
                   offset: const Offset(0, 600),
                   radius: screenHeight * 0.3,
-                  color: MyThemeData.primaryColor.withOpacity(0.5),
+                  color: Theme.of(context).primaryColor.withOpacity(0.5),
                 ),
               ),
             ),
@@ -60,19 +60,16 @@ class AboutView extends StatelessWidget {
                       height: 16,
                     ),
                     buildIntroText(
+                      context: context,
                       nameFontSize: 34,
                       introFontSize: 18,
                     ),
                     const SizedBox(
                       height: 16,
                     ),
-                    const Text(
+                     Text(
                       Strings.descIntro,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: MyThemeData.white,
-                      ),
+                      style: Theme.of(context).textTheme.bodyText1
                     )
                   ],
                 ),
@@ -85,27 +82,18 @@ class AboutView extends StatelessWidget {
   }
 
   Column buildIntroText(
-      {required double nameFontSize, required double introFontSize}) {
+      {required BuildContext context,required double nameFontSize, required double introFontSize}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
           Strings.nameIntro,
-          style: TextStyle(
-            fontFamily: MyThemeData.defaultFont,
-            fontSize: nameFontSize,
-            fontWeight: FontWeight.bold,
-            color: MyThemeData.white,
-          ),
+          style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: nameFontSize),
         ),
         Text(
           Strings.intro,
-          style: TextStyle(
-            fontSize: introFontSize,
-            fontWeight: FontWeight.w500,
-            color: MyThemeData.white,
-          ),
+          style: Theme.of(context).textTheme.bodyText1,
         ),
       ],
     );
@@ -113,7 +101,7 @@ class AboutView extends StatelessWidget {
 
   CircleAvatar buildAvatar({required double size}) {
     return CircleAvatar(
-      backgroundColor: MyThemeData.backgroundColor,
+      backgroundColor: Colors.transparent,
       radius: size / 2,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(size / 2),

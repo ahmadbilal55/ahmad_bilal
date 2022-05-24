@@ -1,5 +1,4 @@
 import 'package:ahmad_bilal/app/assets.dart';
-import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/models/skill_model.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ class SkillsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Container(
-      color: MyThemeData.backgroundColor,
+      color: Theme.of(context).backgroundColor,
       padding: const EdgeInsets.all(16),
       child: ScreenTypeLayout(
         mobile: buildMobileLayout(context, screenSize),
@@ -77,11 +76,11 @@ class SkillsView extends StatelessWidget {
   }
 
   Widget buildMobileLayout(BuildContext context, Size screenSize) {
-    final border = Border.all(width: 1, color: MyThemeData.secondaryBackground);
+    final border = Border.all(width: 1, color: Theme.of(context).dividerColor);
     final borderRadius = BorderRadius.circular(16);
 
     return Container(
-      color: MyThemeData.backgroundColor,
+      color: Theme.of(context).backgroundColor,
       constraints: BoxConstraints(minHeight: screenSize.height),
       child: Column(
         children: [
@@ -171,7 +170,7 @@ class SkillsView extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 64, right: 8, left: 8),
       decoration: BoxDecoration(
         border: border,
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: borderRadius,
         boxShadow: const [
           BoxShadow(color: Colors.black12, blurRadius: 3),

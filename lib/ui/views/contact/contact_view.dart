@@ -1,5 +1,4 @@
 import 'package:ahmad_bilal/app/utils/paths.dart';
-import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:ahmad_bilal/ui/views/contact/contact_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class ContactView extends StatelessWidget {
       builder: (context, model, child) =>
           Container(
             constraints: BoxConstraints(minHeight: screenHeight * 0.2),
-            color: MyThemeData.primaryColor,
+            color: Theme.of(context).primaryColor,
             child: Column(
               children: [
                  ScreenTitle(
@@ -77,14 +76,14 @@ class ContactView extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
-          primary: MyThemeData.secondaryBackground),
+          primary: Theme.of(context).accentColor),
       onPressed: onPressed,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Image.asset(
           iconPath,
           height: iconSize,
-          color: MyThemeData.backgroundColor,
+          color: Colors.white,
         ),
       ),
     );

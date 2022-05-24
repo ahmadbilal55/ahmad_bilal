@@ -23,6 +23,9 @@ dependencies:
   auto_size_text: ^3.0.0
   url_launcher: ^6.0.20
   flutter_rating_stars: ^1.0.3+4
+  stacked_themes: ^0.3.8+1
+  stacked_hooks: ^0.2.2
+  animate_icons: ^2.0.0
 
 dev_dependencies:
   flutter_test:
