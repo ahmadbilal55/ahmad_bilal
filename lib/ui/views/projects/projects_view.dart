@@ -239,14 +239,12 @@ class ProjectsView extends StatelessWidget {
               const SizedBox(
                 height: 8,
               ),
-              Center(
-                child: Text(
-                  project.description,
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.caption!.color,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+              Text(
+                project.description,
+                style: TextStyle(
+                  color: Theme.of(context).textTheme.caption!.color,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               const Spacer(),
