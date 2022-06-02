@@ -187,13 +187,13 @@ class ProjectsView extends StatelessWidget {
           width: cardSize,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).cardColor,
             border: Border.all(color: project.projectPrimaryColor),
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
                 color: elevated && isDesktop
-                    ? project.projectPrimaryColor.withOpacity(0.2)
+                    ? project.projectPrimaryColor.withOpacity(0.4)
                     : Theme.of(context).shadowColor,
                 blurRadius: elevated ? blurRadius : 2,
                 spreadRadius: elevated ? blurSpread : 2,
@@ -204,7 +204,7 @@ class ProjectsView extends StatelessWidget {
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Center(
                 child: Hero(
@@ -215,6 +215,9 @@ class ProjectsView extends StatelessWidget {
                     width: imageSize,
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 8,
               ),
               Hero(
                 tag: project.title,
@@ -235,16 +238,19 @@ class ProjectsView extends StatelessWidget {
               ),
               Text(
                 project.description,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Theme.of(context).textTheme.bodyText1!.color,
+                  color: Theme.of(context).textTheme.caption!.color,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
               ),
+              const Spacer(),
               const Divider(),
               Center(
                 child: Text(
                   Strings.viewMore,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: project.projectPrimaryColor,
                     fontWeight: FontWeight.bold,

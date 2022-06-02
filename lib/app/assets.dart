@@ -24,8 +24,7 @@ List<ProjectModel> get projects {
       '${Paths.shades}/12.png',
       '${Paths.shades}/13.png',
     ],
-    description:
-        'Provide beauty services to your favorite clients.',
+    description: 'Provide beauty services to your favorite clients.',
     logoPath: '${Paths.shades}/shades.png',
     projectPrimaryColor: Color(0xFFa94c4c),
   );
@@ -51,8 +50,41 @@ List<ProjectModel> get projects {
     logoPath: '${Paths.angels}/angels.png',
     projectPrimaryColor: Color(0xFFffaea9),
   );
+  ProjectModel fufa = const ProjectModel(
+    title: 'FUFA',
+    screenshots: [
+      '${Paths.fufa}/0.png',
+      '${Paths.fufa}/1.png',
+      '${Paths.fufa}/2.png',
+      '${Paths.fufa}/3.png',
+      '${Paths.fufa}/4.png',
+      '${Paths.fufa}/5.png',
+      '${Paths.fufa}/6.png',
+      '${Paths.fufa}/7.png',
+      '${Paths.fufa}/8.png',
+      '${Paths.fufa}/9.png',
+      '${Paths.fufa}/10.png',
+      '${Paths.fufa}/11.png',
+    ],
+    description: 'Football live streaming and discussions.',
+    logoPath: '${Paths.fufa}/fufa.png',
+    projectPrimaryColor: Color(0xFFFF5E00),
+  );
+ProjectModel secretDays = const ProjectModel(
+    title: 'Secret Days',
+    screenshots: [
+      '${Paths.secretDays}/0.png',
+      '${Paths.secretDays}/1.png',
+      '${Paths.secretDays}/2.png',
+      '${Paths.secretDays}/3.png',
+      '${Paths.secretDays}/4.png',
+    ],
+    description: 'Connecting two generations.',
+    logoPath: '${Paths.secretDays}/secretDays.png',
+    projectPrimaryColor: Color(0xFF8C0083),
+  );
 
-  projects.addAll([angels, shades]);
+  projects.addAll([angels, shades, fufa,secretDays]);
 
   return projects;
 }

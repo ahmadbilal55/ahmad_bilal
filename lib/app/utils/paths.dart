@@ -12,4 +12,6 @@ class Paths{
   static const github = "assets/icons/github.png";
   static const shades = "assets/projects/shades";
   static const angels = "assets/projects/angels";
+  static const fufa = "assets/projects/fufa";
+  static const secretDays = "assets/projects/secret_days";
 }
