@@ -204,15 +204,18 @@ class ProjectsView extends StatelessWidget {
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
                 child: Hero(
                   tag: "${project.title}:${project.logoPath}",
-                  child: Image.asset(
-                    project.logoPath,
-                    height: imageSize,
-                    width: imageSize,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      project.logoPath,
+                      height: imageSize,
+                      width: imageSize,
+                    ),
                   ),
                 ),
               ),
@@ -236,13 +239,14 @@ class ProjectsView extends StatelessWidget {
               const SizedBox(
                 height: 8,
               ),
-              Text(
-                project.description,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Theme.of(context).textTheme.caption!.color,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+              Center(
+                child: Text(
+                  project.description,
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.caption!.color,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
               const Spacer(),

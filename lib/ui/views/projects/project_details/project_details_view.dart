@@ -114,9 +114,12 @@ class ProjectDetailsView extends StatelessWidget {
             tag: "${project.title}:${project.logoPath}",
             child: Material(
               color: Colors.transparent,
-              child: Image.asset(
-                project.logoPath,
-                height: 36,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Image.asset(
+                  project.logoPath,
+                  height: 36,
+                ),
               ),
             ),
           ),
