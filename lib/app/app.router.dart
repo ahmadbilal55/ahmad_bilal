@@ -8,16 +8,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked/stacked_annotations.dart';
 
 import '../models/project_model.dart';
 import '../ui/views/home/home_view.dart';
+import '../ui/views/loading/loading_view.dart';
 import '../ui/views/projects/project_details/project_details_view.dart';
 
 class Routes {
-  static const String homeView = '/';
+  static const String loadingView = '/';
+  static const String homeView = '/home-view';
   static const String projectDetailsView = '/project-details-view';
   static const all = <String>{
+    loadingView,
     homeView,
     projectDetailsView,
   };
@@ -27,12 +29,19 @@ class StackedRouter extends RouterBase {
   @override
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
+    RouteDef(Routes.loadingView, page: LoadingView),
     RouteDef(Routes.homeView, page: HomeView),
     RouteDef(Routes.projectDetailsView, page: ProjectDetailsView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
+    LoadingView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const LoadingView(),
+        settings: data,
+      );
+    },
     HomeView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => const HomeView(),
@@ -44,7 +53,7 @@ class StackedRouter extends RouterBase {
       return MaterialPageRoute<dynamic>(
         builder: (context) => ProjectDetailsView(
           key: args.key,
-          project: args.projectModel,
+          project: args.project,
         ),
         settings: data,
       );
@@ -59,6 +68,6 @@ class StackedRouter extends RouterBase {
 /// ProjectDetailsView arguments holder class
 class ProjectDetailsViewArguments {
   final Key? key;
-  final ProjectModel projectModel;
-  ProjectDetailsViewArguments({this.key, required this.projectModel});
+  final ProjectModel project;
+  ProjectDetailsViewArguments({this.key, required this.project});
 }

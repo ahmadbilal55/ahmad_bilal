@@ -28,7 +28,9 @@ class MyApp extends StatelessWidget {
         darkTheme: darkTheme,
         themeMode: themeMode,
         navigatorKey: StackedService.navigatorKey,
+        onGenerateInitialRoutes: (initialRoute)=>[StackedRouter().onGenerateRoute(RouteSettings(name:initialRoute))!],
         onGenerateRoute: StackedRouter().onGenerateRoute,
+        //home: const LoadingView(),
       ),
     );
   }

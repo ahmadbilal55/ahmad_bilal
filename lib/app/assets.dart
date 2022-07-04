@@ -7,7 +7,17 @@ import 'package:flutter/material.dart';
 List<ProjectModel> get projects {
   List<ProjectModel> projects = List.empty(growable: true);
   ProjectModel shades = const ProjectModel(
+    techStack: [
+      'Flutter',
+      'Firebase',
+      'Stripe',
+      'Google Maps',
+      'Google places',
+      'Noqodi',
+    ],
+    platforms: ['Android','iOS'],
     title: 'Shades',
+    splashPath:'${Paths.shades}/00.png',
     screenshots: [
       '${Paths.shades}/00.png',
       '${Paths.shades}/01.png',
@@ -29,7 +39,17 @@ List<ProjectModel> get projects {
     projectPrimaryColor: Color(0xFFa94c4c),
   );
   ProjectModel angels = const ProjectModel(
+    techStack: [
+      'Flutter',
+      'Firebase',
+      'Stripe',
+      'Google Maps',
+      'Google places',
+      'Noqodi',
+    ],
+    platforms: ['Android','iOS'],
     title: 'Angels',
+    splashPath:'${Paths.angels}/00.png',
     screenshots: [
       '${Paths.angels}/00.png',
       '${Paths.angels}/01.png',
@@ -51,7 +71,17 @@ List<ProjectModel> get projects {
     projectPrimaryColor: Color(0xFFffaea9),
   );
   ProjectModel fufa = const ProjectModel(
+    techStack: [
+      'Flutter',
+      'Firebase',
+      'DPO',
+      'Live Stream',
+      'Video on Demand',
+      'Premium Subscriptions',
+    ],
+    platforms: ['Android','iOS'],
     title: 'FUFA',
+    splashPath:'${Paths.fufa}/0.png',
     screenshots: [
       '${Paths.fufa}/0.png',
       '${Paths.fufa}/1.png',
@@ -72,6 +102,16 @@ List<ProjectModel> get projects {
   );
 ProjectModel secretDays = const ProjectModel(
     title: 'Secret Days',
+  splashPath:'${Paths.secretDays}/0.png',
+  techStack: [
+    'Flutter',
+    'Firebase',
+    'Stripe',
+    'Voice Calling',
+    'Pay tips',
+    'Agora'
+  ],
+  platforms: ['Android','iOS'],
     screenshots: [
       '${Paths.secretDays}/0.png',
       '${Paths.secretDays}/1.png',

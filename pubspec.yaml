@@ -26,6 +26,7 @@ dependencies:
   stacked_themes: ^0.3.8+1
   stacked_hooks: ^0.2.2
   animate_icons: ^2.0.0
+  animations: ^2.0.3
 
 dev_dependencies:
   flutter_test:
