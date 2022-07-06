@@ -10,9 +10,10 @@ class ProjectItemViewModel extends BaseViewModel{
 
   bool hovering = false;
 
-  void onModelReady(ProjectModel projectModel) {
+  void onModelReady(ProjectModel projectModel,bool focused) {
     project = projectModel;
-
+    hovering = focused;
+    notifyListeners();
   }
 
   void setHovering(bool value){

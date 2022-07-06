@@ -3,20 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
 class TestimonialWidget extends StatelessWidget {
-  const TestimonialWidget({Key? key,required this.testimonial,this.border}) : super(key: key);
+  const TestimonialWidget({
+    Key? key,
+    required this.testimonial,
+    this.border,
+    this.constraints = const BoxConstraints(
+        maxWidth: double.infinity, minWidth: double.infinity),
+  }) : super(key: key);
   final TestimonialModel testimonial;
   final Border? border;
+  final BoxConstraints constraints;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-      const EdgeInsets.symmetric(horizontal: 15.0, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 4),
       child: Container(
-        width: double.infinity,
+        constraints: constraints,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          border:border?? Border.all(
-              color: Theme.of(context).colorScheme.outline),
+          border: border,
         ),
         child: Column(
           children: [

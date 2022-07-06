@@ -17,7 +17,7 @@ class LoadingViewModel extends BaseViewModel {
         _calculateTotalImages();
     await precacheAllImages(context);
     Future.delayed(const Duration(milliseconds: 600), () {
-      navigationService.navigateTo(Routes.homeView);
+      navigationService.clearStackAndShow(Routes.homeView);
     });
   }
 

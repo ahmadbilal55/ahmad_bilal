@@ -1,5 +1,5 @@
 import 'package:ahmad_bilal/models/project_model.dart';
-import 'package:ahmad_bilal/ui/views/projects/project_details/project_details_viewmodel.dart';
+import 'package:ahmad_bilal/ui/views/project_details/project_details_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -222,7 +222,7 @@ class ProjectDetailsView extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     double viewPortFraction = getValueForScreenType(
       context: context,
-      mobile: 1 / 2,
+      mobile: 1 ,
       tablet: 1 / 3,
       desktop: 1 / 5,
     );

@@ -12,9 +12,6 @@ class ProjectsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<ProjectsViewModel>.reactive(
       viewModelBuilder: () => ProjectsViewModel(),
-      onModelReady: (model) {
-        // model.initialize();
-      },
       builder: (context, model, child) {
         return Column(
           children: [
@@ -33,12 +30,16 @@ class ProjectsView extends StatelessWidget {
                 itemBuilder: (_, index) => ShowUp(
                   delay: 300 + 100 * index,
                   child: ProjectItem(
+                    focused: model.focused,
                     project: projects[index],
-                    margin: EdgeInsets.only(right:index!=projects.length-1?16:0,left:index==0?16:0)
+                    margin: EdgeInsets.only(
+                        right: index != projects.length - 1 ? 16 : 0,
+                        left: index == 0 ? 16 : 0),
                   ),
                 ),
               ),
             ),
+            const SizedBox(height: 16),
             Row(
               children: [
                 Expanded(
@@ -47,7 +48,7 @@ class ProjectsView extends StatelessWidget {
                     height: 1,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).shadowColor,
+                      color: Theme.of(context).colorScheme.outline,
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
@@ -62,7 +63,7 @@ class ProjectsView extends StatelessWidget {
                     height: 1,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).shadowColor,
+                      color: Theme.of(context).colorScheme.outline,
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
@@ -76,7 +77,7 @@ class ProjectsView extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Theme.of(context).dividerColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
