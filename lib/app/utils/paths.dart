@@ -4,6 +4,8 @@ class Paths{
   static const displayPictureSquare = 'assets/images/display_picture_square.png';
   static const personalImage = 'assets/images/personal_image.png';
   static const codingAnimation = 'assets/animations/coding.json';
+  static const realtimeCodingAnimation = 'assets/animations/real_time_coding.json';
+  static const programmingAnimation = 'assets/animations/programming.json';
   static const developerAnimation = 'assets/animations/developer.json';
   static const profile = "assets/icons/profile.png";
   static const upwork = "assets/icons/upwork.png";

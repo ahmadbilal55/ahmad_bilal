@@ -63,13 +63,16 @@ class HomeView extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(height: 16,),
-                          Text(
-                            'Freelance Flutter developer with an impressive skill in writing quality systems',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline4
-                                ?.copyWith(fontSize: 24),
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              'Freelance Flutter developer with an impressive skill in writing quality systems',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline4
+                                  ?.copyWith(fontSize: 24),
+                            ),
                           ),
                           SizedBox(height: 16,),
                           LottieBuilder.asset(
