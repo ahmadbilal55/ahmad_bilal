@@ -18,18 +18,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ThemeBuilder(
-      darkTheme: darkThemeData,
-      lightTheme: lightThemeData,
-      defaultThemeMode: ThemeMode.light,
-      builder:(context,regularTheme,darkTheme,themeMode)=> MaterialApp(
-        title: 'Ahmad Bilal',
-        theme: regularTheme,
-        darkTheme: darkTheme,
-        themeMode: themeMode,
-        navigatorKey: StackedService.navigatorKey,
-        onGenerateRoute: StackedRouter().onGenerateRoute,
-      ),
+    return MaterialApp(
+      title: 'Ahmad Bilal',
+      theme: lightThemeData,
+      navigatorKey: StackedService.navigatorKey,
+      onGenerateRoute: StackedRouter().onGenerateRoute,
     );
   }
 }

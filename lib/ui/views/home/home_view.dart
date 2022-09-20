@@ -5,12 +5,10 @@ import 'package:ahmad_bilal/ui/views/contact/contact_view.dart';
 import 'package:ahmad_bilal/ui/views/projects/projects_view.dart';
 import 'package:ahmad_bilal/ui/views/skills/skills_view.dart';
 import 'package:ahmad_bilal/ui/views/testimonials/testimonials_view.dart';
-import 'package:ahmad_bilal/ui/widgets/smart_widgets/theme_switcher/theme_switch_button.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:stacked_themes/stacked_themes.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -26,50 +24,67 @@ class HomeView extends StatelessWidget {
             Expanded(
               child: Stack(
                 children: [
-                  Center(
-                    child: Container(
-                      height: 450,
-                      width: 300,
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 32, vertical: 16),
-                      child: IgnorePointer(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            LottieBuilder.asset(
-                              Paths.codingAnimation,
-                              height: screenHeight * 0.3,
-                              frameRate: FrameRate.max,
-                            ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                            Text(Strings.name,
-                                style: Theme.of(context).textTheme.headline6),
-                            AnimatedTextKit(
-                              repeatForever: true,
-                              animatedTexts: [
-                                buildTypewriterAnimatedText(
-                                    context: context,
-                                    text: 'Flutter Developer'),
-                                buildTypewriterAnimatedText(
-                                    context: context,
-                                    text: 'Android Developer'),
-                                buildTypewriterAnimatedText(
-                                    context: context, text: 'Firebase Expert'),
-                                buildTypewriterAnimatedText(
-                                    context: context, text: 'NodeJs Developer'),
+                  IgnorePointer(
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                LottieBuilder.asset(
+                                  Paths.developerAnimation,
+                                  height: screenHeight * 0.3,
+                                  frameRate: FrameRate.max,
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                Text(Strings.name,
+                                    style: Theme.of(context).textTheme.headline6),
+                                AnimatedTextKit(
+                                  repeatForever: true,
+                                  animatedTexts: [
+                                    buildTypewriterAnimatedText(
+                                        context: context, text: 'Flutter Developer'),
+                                    buildTypewriterAnimatedText(
+                                        context: context, text: 'Android Developer'),
+                                    buildTypewriterAnimatedText(
+                                        context: context, text: 'Firebase Expert'),
+                                    buildTypewriterAnimatedText(
+                                        context: context, text: 'NodeJs Developer'),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(height: 16,),
+                          Text(
+                            'Freelance Flutter developer with an impressive skill in writing quality systems',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline4
+                                ?.copyWith(fontSize: 24),
+                          ),
+                          SizedBox(height: 16,),
+                          LottieBuilder.asset(
+                            Paths.codingAnimation,
+                            height: screenHeight * 0.3,
+                            frameRate: FrameRate.max,
+                          )
+                        ],
                       ),
                     ),
                   ),
                   ListView(
                     children: [
                       SizedBox(
-                        height: screenHeight - screenHeight * 0.2,
+                        height: screenHeight,
                       ),
                       const AboutView(),
                       const SkillsView(),
@@ -77,10 +92,6 @@ class HomeView extends StatelessWidget {
                       const TestimonialsView(),
                       const ContactView(),
                     ],
-                  ),
-                  ThemeSwitcher(
-                    endIcon:getThemeManager(context).isDarkMode?Icons.light_mode:Icons.dark_mode,
-                    initialIcon:!getThemeManager(context).isDarkMode?Icons.light_mode:Icons.dark_mode,
                   ),
                 ],
               ),
@@ -97,7 +108,7 @@ class HomeView extends StatelessWidget {
         context: context, mobile: 24, desktop: 30, tablet: 30);
     return TypewriterAnimatedText(
       text,
-      speed:const Duration(milliseconds: 75),
+      speed: const Duration(milliseconds: 75),
       textStyle: TextStyle(
         fontSize: fontSize.toDouble(),
         fontWeight: FontWeight.bold,
