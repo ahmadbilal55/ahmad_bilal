@@ -18,7 +18,7 @@ class BackgroundImage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Container(
-            color: Theme.of(context).backgroundColor.withOpacity(0.8),
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
           )
         ],
       ),

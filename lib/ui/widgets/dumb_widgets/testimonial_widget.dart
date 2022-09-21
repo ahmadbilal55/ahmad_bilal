@@ -26,14 +26,20 @@ class TestimonialWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(testimonial.clientName),
+            Text(
+              testimonial.clientName,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onBackground,
+              ),
+            ),
             const SizedBox(
               height: 8,
             ),
             Text(
               '"${testimonial.testimony}"',
               textAlign: TextAlign.center,
-              style: const TextStyle(fontStyle: FontStyle.italic),
+              style:  TextStyle(fontStyle: FontStyle.italic,
+                color: Theme.of(context).colorScheme.primary,),
             ),
             const SizedBox(
               height: 8,

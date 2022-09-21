@@ -7,31 +7,43 @@ class Skills extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: const [
-        SizedBox(width: 16),
-        Expanded(
-          child: AnimatedCircle(
-            iconPath: Paths.flutter,
-            label: 'Flutter',
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 16),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 500),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                SizedBox(width: 16),
+                Expanded(
+                  child: AnimatedCircle(
+                    iconPath: Paths.flutter,
+                    label: 'Flutter',
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: AnimatedCircle(
+                    iconPath: Paths.android,
+                    label: 'Android',
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: AnimatedCircle(
+                    iconPath: Paths.firebase,
+                    label: 'Firebase',
+                  ),
+                ),
+                SizedBox(width: 16),
+              ],
+            ),
           ),
-        ),
-        SizedBox(width: 16),
-        Expanded(
-          child: AnimatedCircle(
-            iconPath: Paths.android,
-            label: 'Android',
-          ),
-        ),
-        SizedBox(width: 16),
-        Expanded(
-          child: AnimatedCircle(
-            iconPath: Paths.firebase,
-            label: 'Firebase',
-          ),
-        ),
-        SizedBox(width: 16),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -58,6 +58,9 @@ class ProjectDetailsView extends StatelessWidget {
                 value: Text(
                   project.description,
                   maxLines: 4,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onBackground,
+                  ),
                 ),
               ),
             ),
@@ -66,7 +69,7 @@ class ProjectDetailsView extends StatelessWidget {
               child: projectDetailItem(
                 context,
                 delay: 400,
-                title: 'Tech Stack',
+                title: 'Tech Stack & Features',
                 value: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -75,7 +78,12 @@ class ProjectDetailsView extends StatelessWidget {
                         index++)
                       Padding(
                         padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Text("•   ${project.techStack[index]}"),
+                        child: Text(
+                          "•   ${project.techStack[index]}",
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                        ),
                       ),
                   ],
                 ),
@@ -95,7 +103,12 @@ class ProjectDetailsView extends StatelessWidget {
                         index++)
                       Padding(
                         padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Text("•   ${project.platforms[index]}"),
+                        child: Text(
+                          "•   ${project.platforms[index]}",
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                        ),
                       ),
                   ],
                 ),
@@ -115,7 +128,9 @@ class ProjectDetailsView extends StatelessWidget {
                 maxLines: 4,
               ),
             ),
-            const SizedBox(height: 16,),
+            const SizedBox(
+              height: 16,
+            ),
             projectDetailItem(
               context,
               delay: 400,
@@ -123,9 +138,7 @@ class ProjectDetailsView extends StatelessWidget {
               value: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (int index = 0;
-                      index < project.techStack.length;
-                      index++)
+                  for (int index = 0; index < project.techStack.length; index++)
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: Text("•   ${project.techStack[index]}"),
@@ -133,7 +146,9 @@ class ProjectDetailsView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16,),
+            SizedBox(
+              height: 16,
+            ),
             projectDetailItem(
               context,
               delay: 500,
@@ -141,9 +156,7 @@ class ProjectDetailsView extends StatelessWidget {
               value: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (int index = 0;
-                      index < project.platforms.length;
-                      index++)
+                  for (int index = 0; index < project.platforms.length; index++)
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: Text("•   ${project.platforms[index]}"),
@@ -222,7 +235,7 @@ class ProjectDetailsView extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     double viewPortFraction = getValueForScreenType(
       context: context,
-      mobile: 1 ,
+      mobile: 1,
       tablet: 1 / 3,
       desktop: 1 / 5,
     );
@@ -230,7 +243,7 @@ class ProjectDetailsView extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       height: screenHeight * 0.5,
       width: double.infinity,
-      color: Theme.of(context).colorScheme.surface,
+      color: project.projectPrimaryColor.withOpacity(0.2),
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -279,7 +292,7 @@ class ProjectDetailsView extends StatelessWidget {
               onPressed: () => model.changePage(false),
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: Theme.of(context).colorScheme.primary,
+                color: project.projectPrimaryColor,
               ),
             ),
           ),
@@ -289,7 +302,7 @@ class ProjectDetailsView extends StatelessWidget {
               onPressed: () => model.changePage(true),
               icon: Icon(
                 Icons.arrow_forward_ios,
-                color: Theme.of(context).colorScheme.primary,
+                color: project.projectPrimaryColor,
               ),
             ),
           ),
@@ -305,7 +318,7 @@ class ProjectDetailsView extends StatelessWidget {
         children: [
           IconButton(
             onPressed: model.goBack,
-            icon: const Icon(Icons.arrow_back),
+            icon:  Icon(Icons.arrow_back,color: project.projectPrimaryColor,),
           ),
           const SizedBox(
             width: 16,
@@ -353,7 +366,7 @@ class ProjectDetailsView extends StatelessWidget {
         child: Row(
           children: [
             VerticalDivider(
-              color: Theme.of(context).colorScheme.primary,
+              color: project.projectPrimaryColor,
             ),
             Expanded(
               child: Column(
@@ -363,7 +376,7 @@ class ProjectDetailsView extends StatelessWidget {
                     title,
                     style: Theme.of(context).textTheme.headline1?.copyWith(
                           fontSize: 24,
-                          color: Theme.of(context).colorScheme.primary,
+                          color: project.projectPrimaryColor,
                         ),
                   ),
                   const SizedBox(height: 8),

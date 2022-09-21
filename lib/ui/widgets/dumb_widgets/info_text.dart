@@ -19,7 +19,7 @@ class InfoText extends StatelessWidget {
         ),
         Text(
           value,
-          style: Theme.of(context).textTheme.caption,
+          style: Theme.of(context).textTheme.bodyText1,
         ),
       ],
     );

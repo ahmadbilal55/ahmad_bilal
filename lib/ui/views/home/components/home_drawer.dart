@@ -43,7 +43,7 @@ class HomeDrawer extends StatelessWidget {
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
               child: Text(
                 Strings.intro,
-                style: Theme.of(context).textTheme.caption,
+                style: Theme.of(context).textTheme.bodyText1,
                 textAlign: TextAlign.center,
               ),
             ),

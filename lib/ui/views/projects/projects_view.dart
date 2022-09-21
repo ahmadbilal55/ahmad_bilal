@@ -19,7 +19,9 @@ class ProjectsView extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 "Projects",
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.headline2!.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
               ),
             ),
             SizedBox(

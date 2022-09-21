@@ -1,6 +1,6 @@
 import 'package:ahmad_bilal/ui/views/home_intro/home_intro_view.dart';
 import 'package:ahmad_bilal/ui/views/projects/projects_view.dart';
-import 'package:ahmad_bilal/ui/views/home/components/home_drawer.dart';
+import 'package:ahmad_bilal/ui/widgets/dumb_widgets/skills.dart';
 import 'package:flutter/material.dart';
 
 class DesktopTabletLayout extends StatelessWidget {
@@ -8,24 +8,16 @@ class DesktopTabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const HomeDrawer(),
-        Expanded(
-          child: SingleChildScrollView(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  HomeIntroView(),
-                  ProjectsView(),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          HomeIntroView(),
+          ProjectsView(),
+          Skills()
+        ],
+      ),
     );
   }
 }

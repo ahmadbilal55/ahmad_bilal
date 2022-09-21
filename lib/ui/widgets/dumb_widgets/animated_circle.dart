@@ -36,7 +36,7 @@ class AnimatedCircle extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        Text(label)
+        Text(label,style: TextStyle(color: Theme.of(context).colorScheme.primary),)
       ],
     );
   }

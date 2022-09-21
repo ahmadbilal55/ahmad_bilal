@@ -17,7 +17,7 @@ class StartProject extends StatelessWidget {
       children: [
         Text(
           Strings.startProject,
-          style: Theme.of(context).textTheme.headline2,
+          style: Theme.of(context).textTheme.headline2!.copyWith(color: Colors.white),
         ),
         const SizedBox(
           height: 16,
