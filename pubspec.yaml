@@ -62,16 +62,14 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-   - family: Caviar_Dreams
+   - family: futura
      fonts:
-       - asset: fonts/CaviarDreams.ttf
-       - asset: fonts/Caviar_Dreams_Bold.ttf
-         weight: 700
-       - asset: fonts/CaviarDreams_Italic.ttf
-         style: italic
-       - asset: fonts/CaviarDreams_BoldItalic.ttf
-         weight: 700
-         style: italic
+       - asset: assets/fonts/futura/futura_light.ttf
+         weight: 200
+       - asset: assets/fonts/futura/futura_medium.ttf
+         weight: 400
+       - asset: assets/fonts/futura/futura_bold.ttf
+         weight: 800
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

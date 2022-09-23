@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 final lightThemeData = ThemeData(
   colorScheme: const ColorScheme(
     primary: Color(0xFF00B3FF),
@@ -19,23 +17,40 @@ final lightThemeData = ThemeData(
   ),
   textTheme: const TextTheme(
     headline1: TextStyle(
-        color: Color(0xFF000000), fontSize: 16, fontWeight: FontWeight.bold),
+      color: Color(0xFF000000),
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'futura',
+    ),
     headline2: TextStyle(
-        color: Color(0xFF000000), fontSize: 32, fontWeight: FontWeight.bold),
+      color: Color(0xFF000000),
+      fontSize: 32,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'futura',
+    ),
     subtitle1: TextStyle(
       color: Color(0xFF000000),
+      fontFamily: 'futura',
     ),
     subtitle2: TextStyle(
       color: Color(0xFF000000),
       fontWeight: FontWeight.bold,
+      fontFamily: 'futura',
     ),
     bodyText1: TextStyle(
-      fontSize: 14,
+      fontSize: 16,
       color: Color(0xFF00B3FF),
+      fontFamily: 'futura',
+    ),
+    bodyText2: TextStyle(
+      fontSize: 20,
+      color: Color(0xFF000000),
+      fontFamily: 'futura',
     ),
     caption: TextStyle(
       fontSize: 14,
       color: Color(0xFFFFFFFF),
+      fontFamily: 'futura',
     ),
   ),
 );

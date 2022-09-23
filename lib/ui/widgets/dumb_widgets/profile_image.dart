@@ -28,21 +28,18 @@ class ProfileImage extends StatelessWidget {
                 backgroundImage: AssetImage(
                   Paths.displayPictureSquare,
                 ),
-                radius: 50,
+                radius: 70,
               ),
             )),
         Text(
           Strings.name,
-          style: nameStyle??Theme.of(context).textTheme.subtitle1,
-        ),
-        const SizedBox(
-          height: 8,
+          style: nameStyle??Theme.of(context).textTheme.headline2,
         ),
         Text(
           Strings.skillIntro,
           maxLines: 2,
           textAlign: TextAlign.center,
-          style: introStyle??Theme.of(context).textTheme.caption,
+          style: Theme.of(context).textTheme.bodyText1,
         ),
       ],
     );

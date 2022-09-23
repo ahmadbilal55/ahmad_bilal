@@ -4,6 +4,7 @@ class Paths {
   static const displayPictureSquare = 'assets/images/display_picture_square.png';
   static const backgroundImage = 'assets/images/background_image.jpg';
   static const codingAnimation = 'assets/animations/coding.json';
+  static const developerAnimation = 'assets/animations/developer.json';
   static const profile = "assets/icons/profile.png";
   static const upwork = "assets/icons/upwork.png";
   static const email = "assets/icons/email.png";
@@ -34,4 +35,5 @@ class Paths {
     displayPictureNoBG,
     displayPictureSquare,
   ];
+
 }
