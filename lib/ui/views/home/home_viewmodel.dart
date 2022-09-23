@@ -2,7 +2,7 @@ import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:stacked/stacked.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeIntroViewModel extends BaseViewModel{
+class HomeViewModel extends BaseViewModel{
 
   void openLinkedIn() {
     launchUrl(Strings.linkedInProfileUrl);

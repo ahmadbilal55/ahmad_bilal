@@ -1,6 +1,5 @@
 import 'package:ahmad_bilal/app/assets.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/project_item/project_item.dart';
-import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'projects_view_model.dart';
@@ -40,15 +39,12 @@ class ProjectsView extends StatelessWidget {
                       shrinkWrap: true,
                       itemCount: projects.length,
                       scrollDirection: Axis.horizontal,
-                      itemBuilder: (_, index) => ShowUp(
-                        delay: 300 + 100 * index,
-                        child: ProjectItem(
-                          focused: model.focused,
-                          project: projects[index],
-                          margin: EdgeInsets.only(
-                              right: index != projects.length - 1 ? 16 : 0,
-                              left: index == 0 ? 16 : 0),
-                        ),
+                      itemBuilder: (_, index) => ProjectItem(
+                        focused: model.focused,
+                        project: projects[index],
+                        margin: EdgeInsets.only(
+                            right: index != projects.length - 1 ? 16 : 0,
+                            left: index == 0 ? 16 : 0),
                       ),
                     ),
                   ),

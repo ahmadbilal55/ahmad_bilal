@@ -8,10 +8,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked/stacked_annotations.dart';
 
 import '../models/project_model.dart';
-import '../ui/views/home/home_view.dart';
+import '../ui/views/main/main_view.dart';
 import '../ui/views/project_details/project_details_view.dart';
 
 class Routes {
