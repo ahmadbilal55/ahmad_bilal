@@ -19,7 +19,7 @@ class TestimonialWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 4),
       child: Container(
-        constraints: constraints,
+        height: 200,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           border: border,
@@ -35,11 +35,13 @@ class TestimonialWidget extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Text(
-              '"${testimonial.testimony}"',
-              textAlign: TextAlign.center,
-              style:  TextStyle(fontStyle: FontStyle.italic,
-                color: Theme.of(context).colorScheme.primary,),
+            Expanded(
+              child: Text(
+                '"${testimonial.testimony}"',
+                textAlign: TextAlign.center,
+                style:  TextStyle(fontStyle: FontStyle.italic,
+                  color: Theme.of(context).colorScheme.primary,),
+              ),
             ),
             const SizedBox(
               height: 8,

@@ -13,77 +13,91 @@ class ProjectsView extends StatelessWidget {
     return ViewModelBuilder<ProjectsViewModel>.reactive(
       viewModelBuilder: () => ProjectsViewModel(),
       builder: (context, model, child) {
-        return Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                "Projects",
-                style: Theme.of(context).textTheme.headline2!.copyWith(
-                      color: Theme.of(context).colorScheme.onBackground,
-                    ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.4,
-              child: ListView.builder(
-                itemCount: projects.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) => ShowUp(
-                  delay: 300 + 100 * index,
-                  child: ProjectItem(
-                    focused: model.focused,
-                    project: projects[index],
-                    margin: EdgeInsets.only(
-                        right: index != projects.length - 1 ? 16 : 0,
-                        left: index == 0 ? 16 : 0),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 16),
-                    height: 1,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.outline,
-                      borderRadius: BorderRadius.circular(2),
+        var screenHeight = MediaQuery.of(context).size.height;
+        return Container(
+          color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+          constraints: BoxConstraints(minHeight: screenHeight),
+          width: double.infinity,
+          child: Center(
+            child: ConstrainedBox(
+              constraints:
+                  BoxConstraints(maxWidth: 1200, minHeight: screenHeight),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      "Projects",
+                      style: Theme.of(context).textTheme.headline2!.copyWith(
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
                     ),
                   ),
-                ),
-                Text(
-                  "AND",
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 16),
-                    height: 1,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.outline,
-                      borderRadius: BorderRadius.circular(2),
+                  SizedBox(
+                    height: screenHeight * 0.5,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: projects.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (_, index) => ShowUp(
+                        delay: 300 + 100 * index,
+                        child: ProjectItem(
+                          focused: model.focused,
+                          project: projects[index],
+                          margin: EdgeInsets.only(
+                              right: index != projects.length - 1 ? 16 : 0,
+                              left: index == 0 ? 16 : 0),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Text(
-                "I have built this website using Flutter Web.",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 16),
+                          height: 1,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.outline,
+                            borderRadius: BorderRadius.circular(2),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "AND",
+                        style: Theme.of(context).textTheme.subtitle1,
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 16),
+                          height: 1,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.outline,
+                            borderRadius: BorderRadius.circular(2),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      "I have built this website using Flutter Web.",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         );
       },
     );

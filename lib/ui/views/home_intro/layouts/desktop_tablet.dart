@@ -18,73 +18,71 @@ class DesktopTabletLayout extends StatelessWidget {
     var screenHeight = MediaQuery.of(context).size.height;
     return ConstrainedBox(
       constraints: BoxConstraints(minHeight: screenHeight),
-      child: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 250,
-              width: double.infinity,
-              child: Stack(
-                fit: StackFit.expand,
-                alignment: Alignment.topCenter,
+      child: Column(
+        children: [
+          SizedBox(
+            height: 250,
+            width: double.infinity,
+            child: Stack(
+              fit: StackFit.expand,
+              alignment: Alignment.topCenter,
+              children: [
+                const BackgroundImage(),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 1200),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          StartProject(
+                            onTapHireAhmad: model.sendEmail,
+                            alignment: CrossAxisAlignment.start,
+                          ),
+                          Contact(
+                            onTapUpwork: model.openUpwork,
+                            onTapLinkedIn: model.openLinkedIn,
+                            onTapTwitter: model.openTwitter,
+                            onTapGitHub: model.openGitHub,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ProfileImage(),
+          Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: 1200),
+              child: Row(
                 children: [
-                  const BackgroundImage(),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 1200),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            StartProject(
-                              onTapHireAhmad: model.sendEmail,
-                              alignment: CrossAxisAlignment.start,
-                            ),
-                            Contact(
-                              onTapUpwork: model.openUpwork,
-                              onTapLinkedIn: model.openLinkedIn,
-                              onTapTwitter: model.openTwitter,
-                              onTapGitHub: model.openGitHub,
-                            ),
-                          ],
-                        ),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 600),
+                    child: Text(
+                      Strings.intro,
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: LottieBuilder.asset(
+                        Paths.developerAnimation,
+                        height: screenHeight * 0.35,
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            ProfileImage(),
-            Center(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 1200),
-                child: Row(
-                  children: [
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: 600),
-                      child: Text(
-                        Strings.intro,
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
-                    ),
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: LottieBuilder.asset(
-                          Paths.developerAnimation,
-                          height: screenHeight * 0.35,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

@@ -44,11 +44,13 @@ class ProjectContent extends StatelessWidget {
           curve: Curves.fastOutSlowIn,
           duration: const Duration(milliseconds: 300),
           bottom: model.hovering ? 10 : -20,
-          child: const Text(
+          child: Text(
             "View details",
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white,
+              color:  primaryColorLuminance > 0.3
+                  ? Colors.black
+                  : Colors.white,
               fontSize: 12,
             ),
           ),

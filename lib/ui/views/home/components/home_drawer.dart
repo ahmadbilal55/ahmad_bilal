@@ -1,9 +1,9 @@
 import 'package:ahmad_bilal/app/utils/strings.dart';
 
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/basic_info.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/skills.dart';
+import 'package:ahmad_bilal/ui/views/skills/skills_view.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/profile_image.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/testimonials.dart';
+import 'package:ahmad_bilal/ui/views/testimonials/testimonials_view.dart';
 
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -53,9 +53,9 @@ class HomeDrawer extends StatelessWidget {
               style: Theme.of(context).textTheme.headline1,
             ),
             const SizedBox(height: 16),
-            const Skills(),
+            const SkillsView(),
             const Padding(padding: EdgeInsets.all(8.0), child: Divider()),
-            const Testimonials(),
+            const TestimonialsView(),
             const SizedBox(
               height: 8,
             )

@@ -2,21 +2,23 @@ import 'package:ahmad_bilal/models/project_model.dart';
 import 'package:flutter/material.dart';
 
 class ProjectTitle extends StatelessWidget {
-  const ProjectTitle({Key? key, required this.project, required this.focused}) : super(key: key);
+  const ProjectTitle({Key? key, required this.project, required this.focused})
+      : super(key: key);
 
   final ProjectModel project;
   final bool focused;
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    final primaryColorLuminance =
+        project.projectPrimaryColor.computeLuminance();
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Hero(
           tag: "${project.title}:${project.logoPath}",
           child: CircleAvatar(
-            backgroundImage:
-            AssetImage(project.logoPath),
+            backgroundImage: AssetImage(project.logoPath),
             radius: 15,
           ),
         ),
@@ -30,6 +32,10 @@ class ProjectTitle extends StatelessWidget {
             tag: project.title,
             child: Text(
               project.title,
+              style: TextStyle(
+                color:
+                    primaryColorLuminance > 0.3 ? Colors.black : Colors.white,
+              ),
             ),
           ),
         ),

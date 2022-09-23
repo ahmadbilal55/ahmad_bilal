@@ -3,9 +3,9 @@ import 'package:ahmad_bilal/ui/views/home_intro/home_intro_view_model.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/background_image.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/basic_info.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/profile_image.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/skills.dart';
+import 'package:ahmad_bilal/ui/views/skills/skills_view.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/start_project.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/testimonials.dart';
+import 'package:ahmad_bilal/ui/views/testimonials/testimonials_view.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +52,7 @@ class MobileLayout extends StatelessWidget {
           delay: minDelay + 200,
           child: ConstrainedBox(
             constraints:const BoxConstraints(maxHeight: 200,maxWidth: 500,),
-            child: const Skills(),
+            child: const SkillsView(),
           ),
         ),
         const SizedBox(height: 32),
@@ -61,7 +61,7 @@ class MobileLayout extends StatelessWidget {
           style: Theme.of(context).textTheme.headline2,
         ),
         const SizedBox(height: 16),
-        const Testimonials(
+        const TestimonialsView(
           inflateHorizontal: true,
         ),
       ],
