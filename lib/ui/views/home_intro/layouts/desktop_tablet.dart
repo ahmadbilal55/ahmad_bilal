@@ -56,14 +56,14 @@ class DesktopTabletLayout extends StatelessWidget {
               ],
             ),
           ),
-          ProfileImage(),
+          const ProfileImage(),
           Center(
             child: ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 1200),
+              constraints: const BoxConstraints(maxWidth: 1200),
               child: Row(
                 children: [
                   ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 600),
+                    constraints: const BoxConstraints(maxWidth: 600),
                     child: Text(
                       Strings.intro,
                       style: Theme.of(context).textTheme.bodyText2,
