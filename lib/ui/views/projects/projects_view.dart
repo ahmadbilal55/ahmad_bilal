@@ -45,7 +45,7 @@ class ProjectsView extends StatelessWidget {
                             focused: model.focused,
                             project: projects[index],
                             margin: EdgeInsets.only(
-                                right: index != projects.length - 1 ? 16 : 0,
+                                right: 16,
                                 left: index == 0 ? 16 : 0),
                           ),
                         ),

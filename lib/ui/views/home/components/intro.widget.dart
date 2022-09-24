@@ -34,6 +34,7 @@ class IntroWidget extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: LottieBuilder.asset(
                   Paths.developerAnimation,
+                  frameRate: FrameRate.max,
                   height: MediaQuery.of(context).size.height * 0.35,
                 ),
               ),
@@ -63,6 +64,7 @@ class IntroWidget extends StatelessWidget {
           delay: 800,
           child: LottieBuilder.asset(
             Paths.developerAnimation,
+            frameRate: FrameRate.max,
             height: MediaQuery.of(context).size.height * 0.35,
           ),
         ),
