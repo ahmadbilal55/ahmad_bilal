@@ -29,23 +29,27 @@ class ProjectItem extends StatelessWidget {
         child: InkWell(
           ///Added to change the cursor from pointer to hand to indicate a possible button click
           onTap: () {},
-          child: MouseRegion(
-            onEnter: (_) => model.setHovering(true),
-            onExit: (_) => model.setHovering(false),
-            child: OpenContainer<bool>(
-              clipBehavior: Clip.antiAlias,
-              closedShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8)),
-              closedColor: Colors.transparent,
-              openBuilder: (context, _) => ProjectDetailsView(project: project),
-              closedBuilder: (context, _) => Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: ProjectContent(
-                    model: model,
-                    project: project,
-                  )),
+          child: GestureDetector(
+            onLongPressStart: (_)=>model.setHovering(true),
+            onLongPressEnd: (_)=>model.setHovering(false),
+            child: MouseRegion(
+              onEnter: (_) => model.setHovering(true),
+              onExit: (_) => model.setHovering(false),
+              child: OpenContainer<bool>(
+                clipBehavior: Clip.antiAlias,
+                closedShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                closedColor: Colors.transparent,
+                openBuilder: (context, _) => ProjectDetailsView(project: project),
+                closedBuilder: (context, _) => Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: ProjectContent(
+                      model: model,
+                      project: project,
+                    )),
+              ),
             ),
           ),
         ),

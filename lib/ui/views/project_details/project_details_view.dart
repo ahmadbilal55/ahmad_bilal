@@ -33,8 +33,8 @@ class ProjectDetailsView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            screenshots(context, model, screenHeight),
             header(context, model),
+            screenshots(context, model, screenHeight),
             content(screenWidth, context)
           ],
         ),
@@ -268,13 +268,15 @@ class ProjectDetailsView extends StatelessWidget {
                   ),
               ],
               options: CarouselOptions(
-                  aspectRatio: 375 / 821,
-                  viewportFraction: viewPortFraction,
-                  enableInfiniteScroll: true,
-                  autoPlay: true,
-                  onPageChanged: model.onPageChanged,
-                  initialPage: 0,
-                  pageSnapping: false),
+                aspectRatio: 375 / 821,
+                viewportFraction: viewPortFraction,
+                enableInfiniteScroll: true,
+                autoPlay: true,
+                scrollPhysics: const NeverScrollableScrollPhysics(),
+                onPageChanged: model.onPageChanged,
+                initialPage: 0,
+                pageSnapping: false,
+              ),
             ),
           ),
           AspectRatio(
@@ -313,12 +315,15 @@ class ProjectDetailsView extends StatelessWidget {
 
   Widget header(BuildContext context, ProjectDetailsViewModel model) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: Row(
         children: [
           IconButton(
             onPressed: model.goBack,
-            icon:  Icon(Icons.arrow_back,color: project.projectPrimaryColor,),
+            icon: Icon(
+              Icons.arrow_back,
+              color: project.projectPrimaryColor,
+            ),
           ),
           const SizedBox(
             width: 16,

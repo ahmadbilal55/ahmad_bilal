@@ -26,7 +26,7 @@ class TestimonialsView extends StatelessWidget {
             child: ScreenTitle(title: 'Testimonials'),
           ),
           ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 520,minWidth: 1200),
+            constraints: const BoxConstraints(maxHeight: 520, minWidth: 1200),
             child: Center(
               child: GridView.count(
                 crossAxisCount: 2,
@@ -45,7 +45,14 @@ class TestimonialsView extends StatelessWidget {
           ),
           const Padding(
             padding:  EdgeInsets.all(16.0),
-            child: Text("Designed and developed by Ahmed Bilal"),
+            child: Text(
+              "Designed and developed by Ahmed Bilal",
+              style: TextStyle(
+                fontSize: 12,
+                fontFamily: 'futura',
+                color: Colors.grey
+              ),
+            ),
           )
         ],
       ),

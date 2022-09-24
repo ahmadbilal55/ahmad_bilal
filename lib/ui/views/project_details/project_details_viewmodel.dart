@@ -28,6 +28,6 @@ class ProjectDetailsViewModel extends BaseViewModel {
   void changePage(bool forward) {
     currentIndex += forward?1:-1;
 
-    carouselController.animateToPage(currentIndex);
+    carouselController.animateToPage(currentIndex,curve: Curves.fastOutSlowIn,duration: const Duration(milliseconds: 300));
   }
 }

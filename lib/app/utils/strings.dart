@@ -1,6 +1,6 @@
 class Strings {
   static const String nameIntro = "Hi, I'm Ahmad";
-  static const String name = "Ahmad Bilal";
+  static const String name = "Ahmed Bilal";
   static const String skillIntro = "Flutter Developer | Firebase Expert ";
   static const String pakistan = "Pakistan";
   static const String nationality = "Nationality";
@@ -19,7 +19,7 @@ class Strings {
   static const String linkedInProfileUrl = "https://www.linkedin.com/in/ahmad-bilal-b5a421201/";
   static const String githubProfileUrl = "https://github.com/ahmadbilal55";
   static const String viewMore = "View More";
-  static const String hireAhmad = 'Hire Ahmad';
+  static const String hireAhmad = 'Hire Ahmed';
   static const String loremIpsum =
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 

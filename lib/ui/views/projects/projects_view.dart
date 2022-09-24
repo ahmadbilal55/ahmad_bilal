@@ -33,20 +33,33 @@ class ProjectsView extends StatelessWidget {
                           ),
                     ),
                   ),
-                  SizedBox(
-                    height: screenHeight * 0.5,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: projects.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (_, index) => ProjectItem(
-                        focused: model.focused,
-                        project: projects[index],
-                        margin: EdgeInsets.only(
-                            right: index != projects.length - 1 ? 16 : 0,
-                            left: index == 0 ? 16 : 0),
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: screenHeight * 0.5,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: projects.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (_, index) => ProjectItem(
+                            focused: model.focused,
+                            project: projects[index],
+                            margin: EdgeInsets.only(
+                                right: index != projects.length - 1 ? 16 : 0,
+                                left: index == 0 ? 16 : 0),
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(height: 8,),
+                      Text(
+                        'Tap to view project details',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: 'futura',
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      )
+                    ],
                   ),
                   const SizedBox(height: 16),
                   Row(
@@ -82,7 +95,7 @@ class ProjectsView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(16),
                     child: Text(
-                      "I have built this website using Flutter Web.",
+                      "I have built this website using Flutter.",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
