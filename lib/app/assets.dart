@@ -34,7 +34,8 @@ List<ProjectModel> get projects {
       '${Paths.shades}/12.png',
       '${Paths.shades}/13.png',
     ],
-    description: 'Provide beauty services to your favorite clients.',
+    description:
+        'Request beauty services like massage, hair cut etc. at your doorstep',
     logoPath: '${Paths.shades}/shades.png',
     projectPrimaryColor: Color(0xFFa94c4c),
   );
@@ -65,8 +66,7 @@ List<ProjectModel> get projects {
       '${Paths.angels}/11.png',
       '${Paths.angels}/12.png',
     ],
-    description:
-        'Request beauty services like massage, hair cut etc. at your doorstep',
+    description: 'Provide beauty services to your favorite clients.',
     logoPath: '${Paths.angels}/angels.png',
     projectPrimaryColor: Color(0xFFffaea9),
   );
@@ -202,7 +202,7 @@ final skills = [
     experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
     description: '',
     slogan:
-    "Extremely Robust, Well-Received by Users, High Quality and Commercially Viable",
+        "Extremely Robust, Well-Received by Users, High Quality and Commercially Viable",
     skills: [
       "Java | Kotlin | Xml",
       "Git | Github",
