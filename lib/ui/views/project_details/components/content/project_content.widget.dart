@@ -12,10 +12,6 @@ class ProjectContentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
-  }
-
-  Widget content(double screenWidth, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: ScreenTypeLayout(

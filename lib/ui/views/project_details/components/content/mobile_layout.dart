@@ -18,7 +18,7 @@ class MobileLayout extends StatelessWidget {
         ProjectContentItem(
           showUpDelay: 300,
           title: 'Description',
-          color: projectPrimaryColor,
+          color: Colors.black,
           child: Text(
             project.description,
             maxLines: 4,

@@ -19,30 +19,28 @@ class ProjectContentItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShowUp(
       delay: showUpDelay,
-      child: IntrinsicHeight(
-        child: Row(
-          children: [
-            VerticalDivider(
-              color: color,
+      child: Row(
+        children: [
+          VerticalDivider(
+            color: color,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headline1?.copyWith(
+                        fontSize: 24,
+                        color: color,
+                      ),
+                ),
+                const SizedBox(height: 8),
+                child
+              ],
             ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.headline1?.copyWith(
-                          fontSize: 24,
-                          color: color,
-                        ),
-                  ),
-                  const SizedBox(height: 8),
-                  child
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
