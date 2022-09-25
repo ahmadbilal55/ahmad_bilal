@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
       title: 'Ahmad Bilal',
       theme: lightThemeData,
       navigatorKey: StackedService.navigatorKey,
+      onGenerateInitialRoutes: (initialRoute)=>[StackedRouter().onGenerateRoute(RouteSettings(name:initialRoute))!],
       onGenerateRoute: StackedRouter().onGenerateRoute,
+      //home: const LoadingView(),
     );
   }
 }

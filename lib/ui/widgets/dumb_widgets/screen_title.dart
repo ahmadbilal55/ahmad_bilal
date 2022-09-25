@@ -14,19 +14,11 @@ class ScreenTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fontSize = getValueForScreenType<double>(
-        context: context, mobile: 30, desktop: 36, tablet: 30);
     return Padding(
       padding: margin,
       child: Text(
         title,
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: FontWeight.bold,
-          color: !dark
-              ? Theme.of(context).textTheme.headline1?.color
-              : Theme.of(context).textTheme.headline2?.color,
-        ),
+        style: Theme.of(context).textTheme.headline2
       ),
     );
   }

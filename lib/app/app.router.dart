@@ -8,11 +8,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked/stacked_annotations.dart';
 
 import '../models/project_model.dart';
-import '../ui/views/home/home_view.dart';
-import '../ui/views/projects/project_details/project_details_view.dart';
+import '../ui/views/main/main_view.dart';
+import '../ui/views/project_details/project_details_view.dart';
 
 class Routes {
   static const String homeView = '/';
@@ -44,7 +43,7 @@ class StackedRouter extends RouterBase {
       return MaterialPageRoute<dynamic>(
         builder: (context) => ProjectDetailsView(
           key: args.key,
-          project: args.projectModel,
+          project: args.project,
         ),
         settings: data,
       );
@@ -59,6 +58,6 @@ class StackedRouter extends RouterBase {
 /// ProjectDetailsView arguments holder class
 class ProjectDetailsViewArguments {
   final Key? key;
-  final ProjectModel projectModel;
-  ProjectDetailsViewArguments({this.key, required this.projectModel});
+  final ProjectModel project;
+  ProjectDetailsViewArguments({this.key, required this.project});
 }
