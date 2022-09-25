@@ -1,4 +1,3 @@
-import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
@@ -32,8 +31,8 @@ class IntroWidget extends StatelessWidget {
               delay: 800,
               child: Align(
                 alignment: Alignment.centerRight,
-                child: LottieBuilder.asset(
-                  Paths.developerAnimation,
+                child: LottieBuilder.network(
+                  'https://assets10.lottiefiles.com/packages/lf20_kkflmtur.json',
                   frameRate: FrameRate.max,
                   height: MediaQuery.of(context).size.height * 0.35,
                 ),
@@ -62,8 +61,8 @@ class IntroWidget extends StatelessWidget {
         ),
         ShowUp(
           delay: 800,
-          child: LottieBuilder.asset(
-            Paths.developerAnimation,
+          child: LottieBuilder.network(
+            'https://assets10.lottiefiles.com/packages/lf20_kkflmtur.json',
             frameRate: FrameRate.max,
             height: MediaQuery.of(context).size.height * 0.35,
           ),

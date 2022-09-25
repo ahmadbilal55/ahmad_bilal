@@ -1,5 +1,6 @@
-import 'package:ahmad_bilal/app/assets.dart';
-import 'package:ahmad_bilal/ui/widgets/smart_widgets/project_item/project_item.dart';
+import 'package:ahmad_bilal/ui/views/projects/components/and.widget.dart';
+import 'package:ahmad_bilal/ui/views/projects/components/projects_list.widget.dart';
+import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'projects_view_model.dart';
@@ -19,79 +20,17 @@ class ProjectsView extends StatelessWidget {
           width: double.infinity,
           child: Center(
             child: ConstrainedBox(
-              constraints:
-                  BoxConstraints(maxWidth: 1200, minHeight: screenHeight),
+              constraints: BoxConstraints(
+                maxWidth: 1200,
+                minHeight: screenHeight,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      "Projects",
-                      style: Theme.of(context).textTheme.headline2!.copyWith(
-                            color: Theme.of(context).colorScheme.onBackground,
-                          ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: screenHeight * 0.5,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: projects.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (_, index) => ProjectItem(
-                            focused: model.focused,
-                            project: projects[index],
-                            margin: EdgeInsets.only(
-                                right: 16,
-                                left: index == 0 ? 16 : 0),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 8,),
-                      Text(
-                        'Tap to view project details',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'futura',
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      )
-                    ],
-                  ),
+                  const ScreenTitle(title: 'Projects'),
+                  const ProjectsListWidget(),
                   const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 16),
-                          height: 1,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.outline,
-                            borderRadius: BorderRadius.circular(2),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "AND",
-                        style: Theme.of(context).textTheme.subtitle1,
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 16),
-                          height: 1,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.outline,
-                            borderRadius: BorderRadius.circular(2),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const AndWidget(),
                   Padding(
                     padding: const EdgeInsets.all(16),
                     child: Text(

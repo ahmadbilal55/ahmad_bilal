@@ -2,7 +2,7 @@ class Paths {
   static const displayPicture = 'assets/images/display_picture.png';
   static const displayPictureNoBG = 'assets/images/display_picture_no_bg.png';
   static const displayPictureSquare = 'assets/images/display_picture_square.png';
-  static const backgroundImage = 'assets/images/background_image.jpg';
+  static const backgroundImage = 'assets/images/background_image.png';
   static const codingAnimation = 'assets/animations/coding.json';
   static const developerAnimation = 'assets/animations/developer.json';
   static const profile = "assets/icons/profile.png";

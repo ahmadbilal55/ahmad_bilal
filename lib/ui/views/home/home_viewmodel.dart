@@ -2,8 +2,7 @@ import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:stacked/stacked.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeViewModel extends BaseViewModel{
-
+class HomeViewModel extends BaseViewModel {
   void openLinkedIn() {
     launchUrl(Strings.linkedInProfileUrl);
   }
@@ -27,9 +26,9 @@ class HomeViewModel extends BaseViewModel{
   void sendEmail() {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'ahm4d.bilal@gmail.com',
-      query: _encodeQueryParameters(<String, String>{
-        'subject': 'Proposal for a project'
+      path: Strings.emailAddress,
+      query: _encodeQueryParameters({
+        'subject': Strings.emailSubject,
       }),
     );
 
@@ -38,9 +37,8 @@ class HomeViewModel extends BaseViewModel{
 
   String? _encodeQueryParameters(Map<String, String> params) {
     return params.entries
-        .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .map((e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
         .join('&');
   }
-
 }
-

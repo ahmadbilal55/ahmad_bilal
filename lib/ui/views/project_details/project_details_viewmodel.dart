@@ -18,16 +18,17 @@ class ProjectDetailsViewModel extends BaseViewModel {
     _navigator.back();
   }
 
-
-
   onPageChanged(int index, CarouselPageChangedReason _) {
     currentIndex = index;
     notifyListeners();
   }
 
-  void changePage(bool forward) {
-    currentIndex += forward?1:-1;
-
-    carouselController.animateToPage(currentIndex,curve: Curves.fastOutSlowIn,duration: const Duration(milliseconds: 300));
+  void changePage({required bool forward}) {
+    currentIndex += forward ? 1 : -1;
+    carouselController.animateToPage(
+      currentIndex,
+      curve: Curves.fastOutSlowIn,
+      duration: const Duration(milliseconds: 300),
+    );
   }
 }
