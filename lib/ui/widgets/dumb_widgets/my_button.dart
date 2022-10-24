@@ -34,7 +34,7 @@ class MyButton extends StatelessWidget {
         child: child ??
             Text(
               label,
-              style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
+              style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontFamily: 'futura'),
             ),
       ),
     );

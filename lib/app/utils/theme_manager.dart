@@ -4,6 +4,7 @@ final lightThemeData = ThemeData(
   colorScheme: const ColorScheme(
     primary: Color(0xFF00B3FF),
     secondary: Color(0xFF3B3B3B),
+    secondaryContainer: Color(0xFFF1F1F1),
     background: Color(0xFFFCFCFC),
     outline: Color(0xFF0086BE),
     brightness: Brightness.dark,

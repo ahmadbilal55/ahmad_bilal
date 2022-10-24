@@ -8,19 +8,13 @@ class BackgroundImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      constraints: const BoxConstraints(maxWidth: 1200),
       height: height,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.network(
-            Paths.backgroundImage,
-            fit: BoxFit.cover,
-          ),
-          Container(
-            color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
-          )
-        ],
+      child:
+      Image.asset(
+        Paths.backgroundImage,
+        fit: BoxFit.cover,
       ),
     );
   }

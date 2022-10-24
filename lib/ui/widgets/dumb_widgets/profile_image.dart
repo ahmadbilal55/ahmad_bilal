@@ -17,13 +17,14 @@ class ProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        ShowUp(
+        const ShowUp(
           delay: 300,
-          child: const Padding(
+          child: Padding(
               padding: EdgeInsets.all(8.0),
               child: MyTooltip(
                 message: 'Hello there!',

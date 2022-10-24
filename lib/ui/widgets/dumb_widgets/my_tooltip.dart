@@ -18,7 +18,7 @@ class MyTooltip extends StatelessWidget {
         color: Theme.of(context).colorScheme.primary,
       ),
       preferBelow: true,
-      waitDuration: const Duration(milliseconds: 300),
+      waitDuration: const Duration(milliseconds: 100),
       child: child
     );
   }

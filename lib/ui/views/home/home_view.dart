@@ -14,11 +14,13 @@ class HomeIntroView extends StatelessWidget {
       viewModelBuilder: () => HomeViewModel(),
       builder: (context, model, child) {
         return SafeArea(
-          child: ScreenTypeLayout(
-            breakpoints: const ScreenBreakpoints(tablet: 800,desktop: 1200, watch: 100),
-            mobile: MobileLayout(model: model),
-            desktop: DesktopTabletLayout(model: model),
-            tablet: DesktopTabletLayout(model: model),
+          child: Container(
+            color: Theme.of(context).colorScheme.background,
+            child: ScreenTypeLayout(
+              mobile: MobileLayout(model: model),
+              desktop: DesktopTabletLayout(model: model),
+              tablet: MobileLayout(model: model),
+            ),
           ),
         );
       },

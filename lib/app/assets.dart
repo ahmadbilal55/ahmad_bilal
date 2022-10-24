@@ -218,7 +218,7 @@ final skills = [
     experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
     description: '',
     slogan:
-        "Extremely Robust, Well-Received by Users, High Quality and Commercially Viable",
+        "Impressive Performance, Native Experience, Light Weight Apps with Insane Smoothness.",
     skills: [
       "Java | Kotlin | Xml",
       "Git | Github",
@@ -234,7 +234,7 @@ final skills = [
     experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
     description: '',
     slogan:
-        "Extremely Robust, Well-Received by Users, High Quality and Commercially Viable",
+        "Easy to Read, Fast Development, Little to None Boilerplate.",
     skills: [
       "Java | Kotlin | Xml",
       "Git | Github",
@@ -250,7 +250,7 @@ final skills = [
     experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
     description: '',
     slogan:
-        "Extremely Robust, Well-Received by Users, High Quality and Commercially Viable",
+        "Widely Used, Warmly Accepted, Great Solutions and Awesome Performance.",
     skills: [
       "Java | Kotlin | Xml",
       "Git | Github",

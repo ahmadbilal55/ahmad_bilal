@@ -24,15 +24,17 @@ class HomeView extends StatelessWidget {
             onKey: model.handleKeyEvent,
             child: SingleChildScrollView(
               controller: model.controller,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  HomeIntroView(),
-                  ProjectsView(),
-                  SkillsView(),
-                  TestimonialsView(),
-                ],
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    HomeIntroView(),
+                    ProjectsView(),
+                    SkillsView(),
+                    TestimonialsView(),
+                  ],
+                ),
               ),
             ),
           ),

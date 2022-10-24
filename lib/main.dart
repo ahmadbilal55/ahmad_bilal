@@ -1,4 +1,4 @@
-import 'package:ahmad_bilal/app/app.locator.dart';
+ import 'package:ahmad_bilal/app/app.locator.dart';
 import 'package:ahmad_bilal/app/utils/theme_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -9,6 +9,7 @@ import 'app/app.router.dart';
 void main() async{
   await ThemeManager.initialise();
   setupLocator();
+
   runApp(const MyApp());
 }
 

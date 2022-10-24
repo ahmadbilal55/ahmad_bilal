@@ -5,7 +5,10 @@ import 'package:lottie/lottie.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class IntroWidget extends StatelessWidget {
-  const IntroWidget({Key? key, this.introTextAlign=TextAlign.start,}) : super(key: key);
+  const IntroWidget({
+    Key? key,
+    this.introTextAlign = TextAlign.start,
+  }) : super(key: key);
 
   final TextAlign introTextAlign;
 
@@ -15,6 +18,9 @@ class IntroWidget extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 1200),
       child: Row(
         children: [
+          const SizedBox(
+            width: 16
+          ),
           ShowUp(
             delay: 400,
             child: ConstrainedBox(
