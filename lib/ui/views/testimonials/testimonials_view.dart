@@ -15,8 +15,7 @@ class TestimonialsView extends StatelessWidget {
     return Container(
       color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
       width: double.infinity,
-      constraints:
-          BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+      height:MediaQuery.of(context).size.height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

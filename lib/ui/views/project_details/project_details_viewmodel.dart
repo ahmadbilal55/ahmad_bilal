@@ -1,5 +1,4 @@
 import 'package:ahmad_bilal/app/app.locator.dart';
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:stacked/stacked.dart';

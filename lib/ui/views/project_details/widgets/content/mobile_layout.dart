@@ -1,5 +1,5 @@
 import 'package:ahmad_bilal/models/project_model.dart';
-import 'package:ahmad_bilal/ui/views/project_details/components/content/project_content_item.dart';
+import 'package:ahmad_bilal/ui/views/project_details/widgets/content/project_content_item.dart';
 import 'package:flutter/material.dart';
 
 import 'bullet_list.widget.dart';

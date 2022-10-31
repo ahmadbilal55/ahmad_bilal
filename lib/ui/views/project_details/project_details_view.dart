@@ -1,12 +1,12 @@
 import 'package:ahmad_bilal/models/project_model.dart';
-import 'package:ahmad_bilal/ui/views/project_details/components/project_header.widget.dart';
-import 'package:ahmad_bilal/ui/views/project_details/components/screenshots/screenshots.widget.dart';
+import 'package:ahmad_bilal/ui/views/project_details/widgets/project_header.widget.dart';
+import 'package:ahmad_bilal/ui/views/project_details/widgets/screenshots/screenshots.widget.dart';
 import 'package:ahmad_bilal/ui/views/project_details/project_details_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:stacked/stacked.dart';
 
-import 'components/content/project_content.widget.dart';
+import 'widgets/content/project_content.widget.dart';
 
 class ProjectDetailsView extends StatelessWidget {
   const ProjectDetailsView({Key? key, required this.project}) : super(key: key);

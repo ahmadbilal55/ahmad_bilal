@@ -1,4 +1,4 @@
-import 'package:ahmad_bilal/ui/views/home/components/intro.widget.dart';
+import 'package:ahmad_bilal/ui/views/home/widgets/intro.widget.dart';
 import 'package:ahmad_bilal/ui/views/home/home_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/background_image.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/contact_row.dart';
@@ -14,8 +14,9 @@ class DesktopTabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
-    return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: screenHeight),
+    return Container(
+      constraints: const BoxConstraints(minHeight: 600),
+      height: screenHeight,
       child: Column(
         children: [
           SizedBox(
@@ -54,8 +55,11 @@ class DesktopTabletLayout extends StatelessWidget {
               ],
             ),
           ),
-          const ProfileImage(),
-          const IntroWidget()
+          const Expanded(child: Center(child: ProfileImage())),
+          const Center(child: IntroWidget()),
+          const SizedBox(
+            height: 80,
+          ),
         ],
       ),
     );

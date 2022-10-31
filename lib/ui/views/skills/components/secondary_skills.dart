@@ -9,7 +9,7 @@ class SecondarySkills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: 1200),
+      constraints: const BoxConstraints(maxWidth: 1200),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

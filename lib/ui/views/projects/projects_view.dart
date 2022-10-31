@@ -1,8 +1,9 @@
-import 'package:ahmad_bilal/ui/views/projects/components/and.widget.dart';
-import 'package:ahmad_bilal/ui/views/projects/components/projects_list.widget.dart';
+import 'package:ahmad_bilal/ui/views/projects/widgets/and.widget.dart';
+import 'package:ahmad_bilal/ui/views/projects/widgets/projects_list.widget.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+
 import 'projects_view_model.dart';
 
 class ProjectsView extends StatelessWidget {
@@ -16,7 +17,7 @@ class ProjectsView extends StatelessWidget {
         var screenHeight = MediaQuery.of(context).size.height;
         return Container(
           color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
-          constraints: BoxConstraints(minHeight: screenHeight),
+          height: screenHeight,
           width: double.infinity,
           child: Center(
             child: ConstrainedBox(
@@ -25,23 +26,11 @@ class ProjectsView extends StatelessWidget {
                 minHeight: screenHeight,
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const ScreenTitle(title: 'Projects'),
-                  const ProjectsListWidget(),
-                  const SizedBox(height: 16),
-                  const AndWidget(),
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Text(
-                      "I have built this website using Flutter.",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    ),
-                  ),
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  ScreenTitle(title: 'Projects'),
+                  ProjectsListWidget(),
+                  AndWidget(),
                 ],
               ),
             ),
