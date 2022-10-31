@@ -7,13 +7,15 @@ class ContactRow extends StatelessWidget {
     Key? key,
     required this.onTapUpwork,
     required this.onTapLinkedIn,
-    required this.onTapTwitter,
+    required this.onTapMedium,
     required this.onTapGitHub,
+    required this.onTapStackoverflow,
   }) : super(key: key);
 
   final VoidCallback onTapUpwork;
   final VoidCallback onTapLinkedIn;
-  final VoidCallback onTapTwitter;
+  final VoidCallback onTapMedium;
+  final VoidCallback onTapStackoverflow;
   final VoidCallback onTapGitHub;
 
   @override
@@ -36,8 +38,15 @@ class ContactRow extends StatelessWidget {
           width: 8,
         ),
         ContactButton(
-          logoPath: Paths.twitter,
-          onPressed: onTapTwitter,
+          logoPath: Paths.medium,
+          onPressed: onTapMedium,
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        ContactButton(
+          logoPath: Paths.stackoverflow,
+          onPressed: onTapStackoverflow,
         ),
         const SizedBox(
           width: 8,

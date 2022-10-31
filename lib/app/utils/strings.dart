@@ -17,6 +17,8 @@ class Strings {
   static const String emailSubject = 'Proposal for a project';
   static const String upworkProfileUrl = "https://www.upwork.com/freelancers/~01de7bdfe76242befb";
   static const String twitterProfileUrl = "https://twitter.com/Ahm4dBilal";
+  static const String mediumProfileUrl = "https://medium.com/@ahm4d.bilal";
+  static const String stackoverflowProfileUrl = "https://stackoverflow.com/users/15742019/ahmad-bilal";
   static const String linkedInProfileUrl = "https://www.linkedin.com/in/ahmad-bilal-b5a421201/";
   static const String githubProfileUrl = "https://github.com/ahmadbilal55";
   static const String viewMore = "View More";

@@ -15,7 +15,8 @@ class MobileLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageHeight = getValueForScreenType<double>(context: context, mobile: 250,desktop: 300,tablet: 300);
+    final imageHeight = getValueForScreenType<double>(
+        context: context, mobile: 250, desktop: 300, tablet: 300);
     const int minDelay = 300;
     return Container(
       height: MediaQuery.of(context).size.height,
@@ -33,14 +34,15 @@ class MobileLayout extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Column(
-                      mainAxisSize:MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         StartProject(onTapHireAhmad: model.sendEmail),
                         const SizedBox(height: 16),
                         ContactRow(
                           onTapUpwork: model.openUpwork,
                           onTapLinkedIn: model.openLinkedIn,
-                          onTapTwitter: model.openTwitter,
+                          onTapMedium: model.openMedium,
+                          onTapStackoverflow: model.openStackoverflow,
                           onTapGitHub: model.openGitHub,
                         ),
                       ],
@@ -63,10 +65,13 @@ class MobileLayout extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.all(16.0),
-            child: IntroWidget(introTextAlign: TextAlign.center,),
+            child: IntroWidget(
+              introTextAlign: TextAlign.center,
+            ),
           ),
-
-          SizedBox(height: 36,),
+          const SizedBox(
+            height: 36,
+          ),
         ],
       ),
     );

@@ -7,8 +7,8 @@ class HomeViewModel extends BaseViewModel {
     launchUrl(Strings.linkedInProfileUrl);
   }
 
-  void openTwitter() {
-    launchUrl(Strings.twitterProfileUrl);
+  void openMedium() {
+    launchUrl(Strings.mediumProfileUrl);
   }
 
   void openUpwork() {
@@ -17,6 +17,9 @@ class HomeViewModel extends BaseViewModel {
 
   void openGitHub() {
     launchUrl(Strings.githubProfileUrl);
+  }
+  void openStackoverflow() {
+    launchUrl(Strings.stackoverflowProfileUrl);
   }
 
   void launchUrl(String url) {
@@ -41,4 +44,5 @@ class HomeViewModel extends BaseViewModel {
             '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
         .join('&');
   }
+
 }

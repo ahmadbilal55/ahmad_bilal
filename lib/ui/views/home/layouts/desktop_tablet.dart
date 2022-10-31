@@ -44,7 +44,8 @@ class DesktopTabletLayout extends StatelessWidget {
                           ContactRow(
                             onTapUpwork: model.openUpwork,
                             onTapLinkedIn: model.openLinkedIn,
-                            onTapTwitter: model.openTwitter,
+                            onTapMedium: model.openMedium,
+                            onTapStackoverflow: model.openStackoverflow,
                             onTapGitHub: model.openGitHub,
                           ),
                         ],
