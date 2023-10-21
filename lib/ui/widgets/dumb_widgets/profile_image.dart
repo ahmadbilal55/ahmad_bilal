@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
@@ -47,7 +48,10 @@ class ProfileImage extends StatelessWidget {
           delay: 600,
           child: Text(
             Strings.name,
-            style: nameStyle ?? Theme.of(context).textTheme.headline2,
+            style: nameStyle ??
+                context.theme.textTheme.bigTitles.largeTitleBold.copyWith(
+                  color: context.theme.tints.blue,
+                ),
           ),
         ),
         ShowUp(
@@ -56,7 +60,9 @@ class ProfileImage extends StatelessWidget {
             Strings.skillIntro,
             maxLines: 2,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: context.theme.textTheme.headlines.headlineBold.copyWith(
+              color: context.theme.labels.secondary,
+            ),
           ),
         ),
       ],

@@ -1,4 +1,4 @@
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/MyOutlinedButton.dart';
+import 'package:ahmad_bilal/ui/widgets/dumb_widgets/my_outlined_button.dart';
 import 'package:flutter/material.dart';
 
 

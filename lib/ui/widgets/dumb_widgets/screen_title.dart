@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:flutter/material.dart';
 
 class ScreenTitle extends StatelessWidget {
@@ -17,7 +18,9 @@ class ScreenTitle extends StatelessWidget {
       padding: margin,
       child: Text(
         title,
-        style: Theme.of(context).textTheme.headline2
+        style: context.theme.textTheme.bigTitles.hugeTitle.copyWith(
+          color: context.theme.labels.primary,
+        ),
       ),
     );
   }

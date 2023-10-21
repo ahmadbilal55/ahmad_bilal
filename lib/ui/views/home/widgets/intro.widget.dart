@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +20,10 @@ class IntroWidget extends StatelessWidget {
         delay: 400,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 600),
-          child: Text(
-            Strings.intro,
-            textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .bodyText2!
-                .copyWith(fontWeight: FontWeight.w500, fontSize: 24),
-          ),
+          child: Text(Strings.intro,
+              textAlign: TextAlign.center,
+              style: context.theme.textTheme.body.body
+                  .copyWith(fontSize: 20, color: context.theme.labels.primary,),),
         ),
       ),
     );
@@ -40,16 +37,17 @@ class IntroWidget extends StatelessWidget {
             child: Text(
               Strings.intro,
               textAlign: introTextAlign,
-              style: Theme.of(context).textTheme.bodyText2,
+              style: context.theme.textTheme.body.body
+                  .copyWith(fontSize: 20, color: context.theme.labels.primary,),
             ),
           ),
         ),
       ],
     );
-    return ScreenTypeLayout(
-      mobile: mobileLayout,
-      desktop: desktopLayout,
-      tablet: desktopLayout,
+    return ScreenTypeLayout.builder(
+      mobile: (context) => mobileLayout,
+      desktop: (context) => desktopLayout,
+      tablet: (context) => desktopLayout,
     );
   }
 }

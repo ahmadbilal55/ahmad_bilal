@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/ui/views/home/widgets/intro.widget.dart';
 import 'package:ahmad_bilal/ui/views/home/home_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/background_image.dart';
@@ -18,8 +19,8 @@ class MobileLayout extends StatelessWidget {
     final imageHeight = getValueForScreenType<double>(
         context: context, mobile: 250, desktop: 300, tablet: 300);
     const int minDelay = 300;
-    return Container(
-      height: MediaQuery.of(context).size.height,
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height,
       child: Column(
         children: [
           SizedBox(
@@ -58,7 +59,10 @@ class MobileLayout extends StatelessWidget {
               child: ShowUp(
                 delay: minDelay,
                 child: ProfileImage(
-                  nameStyle: Theme.of(context).textTheme.headline2,
+                  nameStyle:
+                      context.theme.textTheme.headlines.headlineBold.copyWith(
+                    color: context.theme.labels.primary,
+                  ),
                 ),
               ),
             ),

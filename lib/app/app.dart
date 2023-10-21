@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/services/media_query_service.dart';
 import 'package:ahmad_bilal/ui/views/main/main_view.dart';
 import 'package:ahmad_bilal/ui/views/project_details/project_details_view.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -11,6 +12,7 @@ import 'package:stacked_themes/stacked_themes.dart';
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
+    LazySingleton(classType: MediaQueryService),
     LazySingleton(classType: ThemeService),
   ],
 )

@@ -1,11 +1,15 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/my_button.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class StartProject extends StatelessWidget {
-
-  const StartProject({Key? key, required this.onTapHireAhmad, this.alignment = CrossAxisAlignment.center}) : super(key: key);
+  const StartProject(
+      {Key? key,
+      required this.onTapHireAhmad,
+      this.alignment = CrossAxisAlignment.center})
+      : super(key: key);
   final VoidCallback onTapHireAhmad;
   final CrossAxisAlignment alignment;
 
@@ -15,10 +19,10 @@ class StartProject extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: alignment,
       children: [
-        Text(
-          Strings.startProject,
-          style: Theme.of(context).textTheme.headline2!.copyWith(color: Colors.white),
-        ),
+        Text(Strings.startProject,
+            style: context.theme.textTheme.bigTitles.largeTitle.copyWith(
+              color: Colors.white,
+            )),
         const SizedBox(
           height: 16,
         ),
@@ -49,13 +53,10 @@ class StartProject extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
-              " for you.",
-              style: TextStyle(
-                fontSize: 16,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-            ),
+            Text(" for you.",
+                style: context.theme.textTheme.body.body.copyWith(
+                  color: context.theme.tints.blue,
+                )),
           ],
         ),
         const SizedBox(
@@ -72,8 +73,7 @@ class StartProject extends StatelessWidget {
       text,
       cursor: '',
       speed: Duration(milliseconds: speed),
-      textStyle: const TextStyle(
-        fontSize: 16,
+      textStyle: context.theme.textTheme.body.bodySemiBold.copyWith(
         color: Colors.white,
       ),
     );

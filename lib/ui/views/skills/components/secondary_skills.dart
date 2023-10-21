@@ -1,4 +1,5 @@
 import 'package:ahmad_bilal/app/assets.dart';
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:flutter/material.dart';
 
 import 'skill_item.dart';
@@ -15,7 +16,8 @@ class SecondarySkills extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text('Secondary Skills',style: Theme.of(context).textTheme.headline1,),
+            child: Text('Secondary Skills',
+            style: context.theme.textTheme.bigTitles.largeTitle.copyWith(color: context.theme.labels.primary),),
           ),
           SizedBox(
             height: 200,
