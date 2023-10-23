@@ -30,7 +30,7 @@ class Strings {
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
   static const String intro =
-      '''I create professional mobile systems with exceptional qualities!''';
+      '''I am an accomplished Flutter developer with a strong track record, having successfully delivered 10+ major projects and numerous smaller ones. My coding architecture is known for its cleanliness and scalability, garnering positive feedback from clients worldwide.''';
   static const String descIntro =
       "Everything that I know about coding is self taught. I am very excited about coding, while following the best coding practices and maintaining a very clean code, making it hard for bugs to hide. Get in touch and we'll make a great app for you!";
 

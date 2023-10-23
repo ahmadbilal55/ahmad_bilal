@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget {
             onKey: model.handleKeyEvent,
             child: Stack(
               children: [
-                const DottedBackround(),
+                const DottedBackground(),
                 SingleChildScrollView(
                   controller: model.controller,
                   child: const Center(

@@ -1,4 +1,6 @@
 import 'package:ahmad_bilal/app/extensions.dart';
+import 'package:ahmad_bilal/app/utils/paths.dart';
+import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/views/home/widgets/intro.widget.dart';
 import 'package:ahmad_bilal/ui/views/home/home_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/background_image.dart';
@@ -16,66 +18,46 @@ class MobileLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageHeight = getValueForScreenType<double>(
-        context: context, mobile: 250, desktop: 300, tablet: 300);
-    const int minDelay = 300;
     return SizedBox(
       height: MediaQuery.sizeOf(context).height,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            height: imageHeight,
-            width: double.infinity,
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                const BackgroundImage(),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        StartProject(onTapHireAhmad: model.sendEmail),
-                        const SizedBox(height: 16),
-                        ContactRow(
-                          onTapUpwork: model.openUpwork,
-                          onTapLinkedIn: model.openLinkedIn,
-                          onTapMedium: model.openMedium,
-                          onTapStackoverflow: model.openStackoverflow,
-                          onTapGitHub: model.openGitHub,
-                        ),
-                      ],
-                    ),
-                  ),
+          SizedBox(height: 30,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: ShowUp(
+              delay: 600,
+              child: Text(
+                Strings.name,
+                style: context.theme.textTheme.bigTitles.hugeTitle
+                    .copyWith(
+                  color: context.theme.tints.blue,
                 ),
-              ],
+              ),
             ),
           ),
-          const SizedBox(height: 32),
-          Expanded(
-            child: Center(
-              child: ShowUp(
-                delay: minDelay,
-                child: ProfileImage(
-                  nameStyle:
-                      context.theme.textTheme.headlines.headlineBold.copyWith(
-                    color: context.theme.labels.primary,
-                  ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: ShowUp(
+              delay: 900,
+              child: Text(
+                Strings.skillIntro,
+                maxLines: 2,
+                textAlign: TextAlign.center,
+                style:
+                context.theme.textTheme.headlines.headlineBold.copyWith(
+                  color: context.theme.labels.secondary,
                 ),
               ),
             ),
           ),
           const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: IntroWidget(
-              introTextAlign: TextAlign.center,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
+            child: IntroWidget(),
           ),
-          const SizedBox(
-            height: 36,
-          ),
+          Expanded(child: Image.asset(Paths.ahmadBilal))
         ],
       ),
     );

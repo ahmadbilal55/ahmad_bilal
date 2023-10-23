@@ -1,9 +1,9 @@
+import 'package:ahmad_bilal/app/extensions.dart';
+import 'package:ahmad_bilal/app/utils/paths.dart';
+import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/views/home/widgets/intro.widget.dart';
 import 'package:ahmad_bilal/ui/views/home/home_viewmodel.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/background_image.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/contact_row.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/profile_image.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/start_project.dart';
+import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
 
 class DesktopTabletLayout extends StatelessWidget {
@@ -13,54 +13,46 @@ class DesktopTabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenHeight = MediaQuery.of(context).size.height;
-    return Container(
-      constraints: const BoxConstraints(minHeight: 600),
+    var screenHeight = context.mediaQuery.size.height;
+    return SizedBox(
       height: screenHeight,
-      child: Column(
+      child: Row(
         children: [
-          SizedBox(
-            height: 250,
-            width: double.infinity,
-            child: Stack(
-              fit: StackFit.expand,
-              alignment: Alignment.topCenter,
-              children: [
-                const BackgroundImage(),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1200),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          StartProject(
-                            onTapHireAhmad: model.sendEmail,
-                            alignment: CrossAxisAlignment.start,
-                          ),
-                          ContactRow(
-                            onTapUpwork: model.openUpwork,
-                            onTapLinkedIn: model.openLinkedIn,
-                            onTapMedium: model.openMedium,
-                            onTapStackoverflow: model.openStackoverflow,
-                            onTapGitHub: model.openGitHub,
-                          ),
-                        ],
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ShowUp(
+                    delay: 600,
+                    child: Text(
+                      Strings.name,
+                      style: context.theme.textTheme.bigTitles.hugeTitle
+                          .copyWith(
+                        color: context.theme.tints.blue,
                       ),
                     ),
                   ),
-                ),
-              ],
+                  ShowUp(
+                    delay: 900,
+                    child: Text(
+                      Strings.skillIntro,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      style:
+                          context.theme.textTheme.headlines.headlineBold.copyWith(
+                        color: context.theme.labels.secondary,
+                      ),
+                    ),
+                  ),
+                  const IntroWidget(),
+                ],
+              ),
             ),
           ),
-          const Expanded(child: Center(child: ProfileImage())),
-          const Center(child: IntroWidget()),
-          const SizedBox(
-            height: 80,
-          ),
+          Expanded(child: Image.asset(Paths.ahmadBilal,height: screenHeight,))
         ],
       ),
     );

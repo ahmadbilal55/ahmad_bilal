@@ -21,7 +21,7 @@ class IntroWidget extends StatelessWidget {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 600),
           child: Text(Strings.intro,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.start,
               style: context.theme.textTheme.body.body
                   .copyWith(fontSize: 20, color: context.theme.labels.primary,),),
         ),

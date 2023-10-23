@@ -17,7 +17,7 @@ class MainViewModel extends BaseViewModel {
   void scrollPage({required double scrollExtent}) {
     var offset = controller.offset;
     controller.animateTo(
-      offset + 100,
+      offset + scrollExtent,
       duration: const Duration(milliseconds: 100),
       curve: Curves.ease,
     );

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'dotted_background_viewmodel.dart';
 
-class DottedBackround extends StackedView<DottedBackroundViewModel> {
-  const DottedBackround({Key? key}) : super(key: key);
+class DottedBackground extends StackedView<DottedBackroundViewModel> {
+  const DottedBackground({Key? key}) : super(key: key);
 
   @override
   Widget builder(BuildContext context, DottedBackroundViewModel viewModel,
@@ -28,7 +28,7 @@ class DottedBackround extends StackedView<DottedBackroundViewModel> {
                       width: 2,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: context.theme.backgrounds.tertiary,
+                        color: context.theme.keyGray,
                       ),
                     ),
                   ),

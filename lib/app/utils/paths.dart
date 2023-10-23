@@ -20,6 +20,8 @@ class Paths {
   static const fufa = "assets/projects/fufa";
   static const secretDays = "assets/projects/secret_days";
 
+  static const ahmadBilal = "assets/images/ahmad_bilal.png";
+
   static List<String> allImagesPaths = [
     backgroundImage,
     codingAnimation,

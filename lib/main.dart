@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ahmad Bilal',
+      title: 'Ahmad Bilal',themeMode: ThemeMode.light,
       theme: theme.copyWith(
         extensions: <ThemeExtension<dynamic>>[
           AppCupertinoTheme.light,
