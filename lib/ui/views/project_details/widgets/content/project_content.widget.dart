@@ -6,7 +6,8 @@ import 'desktop_tablet_layout.dart';
 import 'mobile_layout.dart';
 
 class ProjectContentWidget extends StatelessWidget {
-  const ProjectContentWidget({Key? key, required this.project}) : super(key: key);
+  const ProjectContentWidget({Key? key, required this.project})
+      : super(key: key);
 
   final ProjectModel project;
 
@@ -14,10 +15,12 @@ class ProjectContentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: ScreenTypeLayout(
-        desktop: DesktopTabletLayout(project:project),
-        mobile: MobileLayout(project: project),
-        tablet: DesktopTabletLayout(project: project,),
+      child: ScreenTypeLayout.builder(
+        desktop: (context) => DesktopTabletLayout(project: project),
+        mobile: (context) => MobileLayout(project: project),
+        tablet: (context) => DesktopTabletLayout(
+          project: project,
+        ),
       ),
     );
   }

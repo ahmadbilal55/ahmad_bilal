@@ -20,7 +20,7 @@ class ProjectItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<ProjectItemViewModel>.reactive(
-      onModelReady: (m) => m.onModelReady(project),
+      onViewModelReady: (m) => m.onModelReady(project),
       viewModelBuilder: () => ProjectItemViewModel(),
       builder: (context, model, _) => Padding(
         padding: margin,
@@ -33,7 +33,7 @@ class ProjectItem extends StatelessWidget {
             child: MouseRegion(
               onEnter: (_) => model.setHovering(true),
               onExit: (_) => model.setHovering(false),
-              child: OpenContainer<bool>(
+              child: OpenContainer<bool>( closedElevation: model.hovering?8:2,
                 clipBehavior: Clip.antiAlias,
                 middleColor: Colors.white,
                 closedShape: RoundedRectangleBorder(
@@ -41,14 +41,9 @@ class ProjectItem extends StatelessWidget {
                 closedColor: Colors.transparent,
                 openBuilder: (context, _) =>
                     ProjectDetailsView(project: project),
-                closedBuilder: (context, _) => Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: ProjectContent(
-                      model: model,
-                      project: project,
-                    )),
+                closedBuilder: (context, _) => ProjectContent(
+                  project: project,
+                ),
               ),
             ),
           ),

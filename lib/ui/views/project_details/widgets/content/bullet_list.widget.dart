@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:flutter/material.dart';
 
 class BulletListWidget extends StatelessWidget {
@@ -18,8 +19,8 @@ class BulletListWidget extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Text(
               "•   ${list[index]}",
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onBackground,
+              style: context.theme.textTheme.body.body.copyWith(
+                color: context.theme.labels.primary,
               ),
             ),
           ),

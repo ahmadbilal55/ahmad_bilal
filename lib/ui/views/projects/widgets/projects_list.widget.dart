@@ -7,18 +7,19 @@ class ProjectsListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        SizedBox(
-          height: screenHeight * 0.5,
+        ConstrainedBox(
+          constraints:const BoxConstraints(
+            minHeight: 150,
+            maxHeight: 210,
+          ),
           child: ListView.builder(
-            shrinkWrap: true,
             itemCount: projects.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) => ProjectItem(
               project: projects[index],
-              margin: EdgeInsets.only(right: 16, left: index == 0 ? 16 : 0),
+              margin: EdgeInsets.only(right: 16, left: index == 0 ? 16 : 0,bottom: 10,top: 10),
             ),
           ),
         ),

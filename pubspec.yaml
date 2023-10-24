@@ -70,20 +70,18 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-   - family: roboto
+   - family: quicksand
      fonts:
-       - asset: assets/fonts/roboto/Roboto-Thin.ttf
-         weight: 100
-       - asset: assets/fonts/roboto/Roboto-Light.ttf
+       - asset: assets/fonts/quicksand/Quicksand-Light.ttf
          weight: 300
-       - asset: assets/fonts/roboto/Roboto-Regular.ttf
+       - asset: assets/fonts/quicksand/Quicksand-Regular.ttf
          weight: 400
-       - asset: assets/fonts/roboto/Roboto-Medium.ttf
+       - asset: assets/fonts/quicksand/Quicksand-Medium.ttf
          weight: 500
-       - asset: assets/fonts/roboto/Roboto-Bold.ttf
+       - asset: assets/fonts/quicksand/Quicksand-SemiBold.ttf
+         weight: 600
+       - asset: assets/fonts/quicksand/Quicksand-Bold.ttf
          weight: 700
-       - asset: assets/fonts/roboto/Roboto-Black.ttf
-         weight: 900
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,13 +1,12 @@
 import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
-import 'package:ahmad_bilal/ui/views/home/widgets/intro.widget.dart';
 import 'package:ahmad_bilal/ui/views/home/home_viewmodel.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
 
-class DesktopTabletLayout extends StatelessWidget {
-  const DesktopTabletLayout({Key? key, required this.model}) : super(key: key);
+class DesktopLayout extends StatelessWidget {
+  const DesktopLayout({Key? key, required this.model}) : super(key: key);
 
   final HomeViewModel model;
 
@@ -17,13 +16,14 @@ class DesktopTabletLayout extends StatelessWidget {
     return SizedBox(
       height: screenHeight,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(50.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ShowUp(
                     delay: 600,
@@ -36,23 +36,23 @@ class DesktopTabletLayout extends StatelessWidget {
                     ),
                   ),
                   ShowUp(
-                    delay: 900,
+                    delay: 1200,
                     child: Text(
-                      Strings.skillIntro,
+                      Strings.catchPhrase,
                       maxLines: 2,
                       textAlign: TextAlign.center,
                       style:
-                          context.theme.textTheme.headlines.headlineBold.copyWith(
-                        color: context.theme.labels.secondary,
+                          context.theme.textTheme.headlines.headline.copyWith(
+                        color: context.theme.labels.primary,
+                            letterSpacing: 2,
                       ),
                     ),
                   ),
-                  const IntroWidget(),
                 ],
               ),
             ),
           ),
-          Expanded(child: Image.asset(Paths.ahmadBilal,height: screenHeight,))
+          Expanded(child: Image.asset(Paths.ahmadBilal,height: screenHeight,fit: BoxFit.fitHeight,))
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:ahmad_bilal/app/assets.dart';
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
 import 'package:flutter/material.dart';
 
@@ -35,22 +36,20 @@ class TestimonialsView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: [
                   for (int index = 0; index < testimonials.length; index++)
-                    TestimonialWidget(
-                      testimonial: testimonials[index],
+                    IntrinsicHeight(
+                      child: TestimonialWidget(
+                        testimonial: testimonials[index],
+                      ),
                     )
                 ],
               ),
             ),
           ),
-          const Padding(
-            padding:  EdgeInsets.all(16.0),
+           Padding(
+            padding:const  EdgeInsets.all(16.0),
             child: Text(
-              "Designed and developed by Ahmed Bilal",
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: 'futura',
-                color: Colors.grey
-              ),
+              "Designed and developed with ❤️ by Ahmad Bilal",
+              style: context.theme.textTheme.caption.caption1.copyWith(color: context.theme.labels.secondary)
             ),
           )
         ],

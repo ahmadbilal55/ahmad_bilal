@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/models/testimonial_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
@@ -19,7 +20,6 @@ class TestimonialWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 4),
       child: Container(
-        height: 200,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           border: border,
@@ -28,8 +28,8 @@ class TestimonialWidget extends StatelessWidget {
           children: [
             Text(
               testimonial.clientName,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onBackground,
+              style: context.theme.textTheme.callouts.callout.copyWith(
+                color: context.theme.labels.primary,
               ),
             ),
             const SizedBox(
@@ -39,8 +39,9 @@ class TestimonialWidget extends StatelessWidget {
               child: Text(
                 '"${testimonial.testimony}"',
                 textAlign: TextAlign.center,
-                style:  TextStyle(fontStyle: FontStyle.italic,
-                  color: Theme.of(context).colorScheme.primary,),
+                style: context.theme.textTheme.subHeadlines.subHeadline.copyWith(
+              color: context.theme.tints.blue,
+              ),
               ),
             ),
             const SizedBox(
@@ -49,7 +50,7 @@ class TestimonialWidget extends StatelessWidget {
             RatingStars(
               value: testimonial.rating ?? 0,
               valueLabelVisibility: false,
-              starColor: Theme.of(context).colorScheme.primary,
+              starColor: context.theme.tints.blue,
             )
           ],
         ),

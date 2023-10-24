@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/models/project_model.dart';
 import 'package:ahmad_bilal/ui/views/project_details/widgets/content/project_content_item.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +25,7 @@ class DesktopTabletLayout extends StatelessWidget {
             child: Text(
               project.description,
               maxLines: 4,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onBackground,
-              ),
+              style: context.theme.textTheme.body.body.copyWith(color: context.theme.labels.primary,)
             ),
           ),
         ),

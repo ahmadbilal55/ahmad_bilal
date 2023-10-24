@@ -3,16 +3,11 @@ import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/views/home/widgets/intro.widget.dart';
 import 'package:ahmad_bilal/ui/views/home/home_viewmodel.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/background_image.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/contact_row.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/profile_image.dart';
-import 'package:ahmad_bilal/ui/widgets/dumb_widgets/start_project.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
-class MobileLayout extends StatelessWidget {
-  const MobileLayout({Key? key, required this.model}) : super(key: key);
+class MobileTabletLayout extends StatelessWidget {
+  const MobileTabletLayout({Key? key, required this.model}) : super(key: key);
 
   final HomeViewModel model;
 

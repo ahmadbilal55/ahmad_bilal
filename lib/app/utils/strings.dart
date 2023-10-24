@@ -2,6 +2,7 @@ class Strings {
   static const String nameIntro = "Hi, I'm Ahmad";
   static const String name = "Ahmad Bilal";
   static const String skillIntro = "Flutter Developer | Firebase Expert ";
+  static const String catchPhrase = "Empowering Your Mobile Presence with the Art of Flutter.";
   static const String pakistan = "Pakistan";
   static const String nationality = "Nationality";
   static const String city = 'City';
