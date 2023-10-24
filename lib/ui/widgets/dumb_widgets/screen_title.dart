@@ -5,11 +5,11 @@ class ScreenTitle extends StatelessWidget {
   const ScreenTitle(
       {Key? key,
       required this.title,
-      this.dark = false,
+      this.color,
       this.margin = EdgeInsets.zero})
       : super(key: key);
   final String title;
-  final bool dark;
+  final Color? color;
   final EdgeInsets margin;
 
   @override
@@ -19,7 +19,7 @@ class ScreenTitle extends StatelessWidget {
       child: Text(
         title,
         style: context.theme.textTheme.bigTitles.hugeTitle.copyWith(
-          color: context.theme.labels.primary,
+          color: color??context.theme.labels.primary,
         ),
       ),
     );

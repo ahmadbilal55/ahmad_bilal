@@ -13,6 +13,7 @@ class Strings {
   static const String home = "Home";
   static const String about = "About";
   static const String projects = "Projects";
+  static const contact = 'Contact';
   static const String testimonials = "Testimonials";
   static const String emailAddress = "ahm4d.bilal@gmail.com";
   static const String emailSubject = 'Proposal for a project';
@@ -24,6 +25,7 @@ class Strings {
       "https://stackoverflow.com/users/15742019/ahmad-bilal";
   static const String linkedInProfileUrl =
       "https://www.linkedin.com/in/ahmad-bilal-b5a421201/";
+  static const resumeUrl = 'https://drive.google.com/file/d/1DTzyFcFPnXJg2hwOhigl9VwZ_WDbtxyK/view?usp=share_link';
   static const String githubProfileUrl = "https://github.com/ahmadbilal55";
   static const String viewMore = "View More";
   static const String hireAhmad = 'Hire Ahmad';
@@ -36,4 +38,10 @@ class Strings {
       "Everything that I know about coding is self taught. I am very excited about coding, while following the best coding practices and maintaining a very clean code, making it hard for bugs to hide. Get in touch and we'll make a great app for you!";
 
   static const startProject = 'Start a new project';
+
+  static const String email = 'ahm4d.bilal@gmail.com';
+
+  static const findMeOn = 'Find me on';
+
+
 }

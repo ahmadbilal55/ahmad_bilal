@@ -1,4 +1,5 @@
 import 'package:ahmad_bilal/app/extensions.dart';
+import 'package:ahmad_bilal/ui/views/contact/contact_view.dart';
 import 'package:ahmad_bilal/ui/views/home/home_view.dart';
 import 'package:ahmad_bilal/ui/views/main/main_viewmodel.dart';
 import 'package:ahmad_bilal/ui/views/projects/projects_view.dart';
@@ -38,6 +39,7 @@ class HomeView extends StatelessWidget {
                         const ProjectsView(),
                         const SkillsView(),
                         const TestimonialsView(),
+                        const ContactView(),
                       ],
                     ),
                   ),
