@@ -3,6 +3,7 @@ import 'package:ahmad_bilal/app/utils/paths.dart';
 import 'package:ahmad_bilal/app/utils/strings.dart';
 import 'package:ahmad_bilal/ui/views/home/widgets/intro.widget.dart';
 import 'package:ahmad_bilal/ui/views/home/home_viewmodel.dart';
+import 'package:ahmad_bilal/ui/widgets/dumb_widgets/gradient_shapes.dart';
 import 'package:ahmad_bilal/ui/widgets/smart_widgets/show_up.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +53,12 @@ class MobileTabletLayout extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
             child: IntroWidget(),
           ),
-          Expanded(child: Image.asset(Paths.ahmadBilal))
+          Expanded(child: Stack(
+            children: [
+              Align(alignment:Alignment.bottomLeft,child: AppGradientShapes()),
+              Center(child: Image.asset(Paths.ahmadBilal)),
+            ],
+          ))
         ],
       ),
     );

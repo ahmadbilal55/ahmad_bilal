@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/ui/views/projects/widgets/and.widget.dart';
 import 'package:ahmad_bilal/ui/views/projects/widgets/projects_list.widget.dart';
 import 'package:ahmad_bilal/ui/widgets/dumb_widgets/screen_title.dart';
@@ -16,7 +17,7 @@ class ProjectsView extends StatelessWidget {
       builder: (context, model, child) {
         var screenHeight = MediaQuery.of(context).size.height;
         return Container(
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+          color: context.theme.backgrounds.primary,
           height: screenHeight,
           width: double.infinity,
           child: Center(
@@ -25,9 +26,9 @@ class ProjectsView extends StatelessWidget {
                 maxWidth: 1200,
                 minHeight: screenHeight,
               ),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
+                children: [
                   ScreenTitle(title: 'Projects'),
                   ProjectsListWidget(),
                   AndWidget(),

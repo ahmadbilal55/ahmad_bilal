@@ -12,7 +12,7 @@ class SkillsView extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).size.height,
-      color: context.theme.backgrounds.primary,
+      color: context.theme.backgrounds.secondary,
       child: const Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(

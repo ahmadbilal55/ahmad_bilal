@@ -25,17 +25,19 @@ class HomeView extends StatelessWidget {
             child: Stack(
               children: [
                 const DottedBackground(),
+                const HomeIntroView(),
                 SingleChildScrollView(
                   controller: model.controller,
-                  child: const Center(
+                  child:  Center(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        HomeIntroView(),
-                        ProjectsView(),
-                        SkillsView(),
-                        TestimonialsView(),
+                        SizedBox(height: context.mediaQuery.size.height,),
+                        Divider(height: 0,color: context.theme.tints.blue,),
+                        const ProjectsView(),
+                        const SkillsView(),
+                        const TestimonialsView(),
                       ],
                     ),
                   ),

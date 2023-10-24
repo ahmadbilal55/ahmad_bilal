@@ -14,7 +14,7 @@ class TestimonialsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+      color: context.theme.backgrounds.primary,
       width: double.infinity,
       height:MediaQuery.of(context).size.height,
       child: Column(

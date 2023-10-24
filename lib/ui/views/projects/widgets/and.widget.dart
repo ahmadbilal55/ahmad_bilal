@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:flutter/material.dart';
 
 class AndWidget extends StatelessWidget {
@@ -15,14 +16,17 @@ class AndWidget extends StatelessWidget {
                 height: 1,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.outline,
+                  color: context.theme.keyGray,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
             ),
             Text(
               "AND",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: context.theme.textTheme.subHeadlines.subHeadlineSemiBold
+                  .copyWith(
+                color: context.theme.keyGray,
+              ),
             ),
             Expanded(
               child: Container(
@@ -30,7 +34,7 @@ class AndWidget extends StatelessWidget {
                 height: 1,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.outline,
+                  color: context.theme.keyGray,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -41,12 +45,8 @@ class AndWidget extends StatelessWidget {
           height: 16,
         ),
         Text(
-          "I have built this website using Flutter.",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-            color: Theme.of(context).colorScheme.primary,
-          ),
+          "I built this website using Flutter.",
+          style: context.theme.textTheme.body.bodySemiBold.copyWith(color: context.theme.tints.blue)
         ),
       ],
     );

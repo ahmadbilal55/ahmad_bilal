@@ -3,6 +3,7 @@ import 'package:ahmad_bilal/models/project_model.dart';
 import 'package:ahmad_bilal/ui/views/project_details/project_details_viewmodel.dart';
 import 'package:ahmad_bilal/ui/views/project_details/widgets/project_header.widget.dart';
 import 'package:ahmad_bilal/ui/views/project_details/widgets/screenshots/screenshots.widget.dart';
+import 'package:ahmad_bilal/ui/widgets/dumb_widgets/gradient_shapes.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:stacked/stacked.dart';
@@ -30,23 +31,30 @@ class ProjectDetailsView extends StatelessWidget {
 
   SafeArea body(BuildContext context, ProjectDetailsViewModel model) {
     return SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ProjectHeader(
-              model: model,
-              project: project,
+      child: Stack(
+        children: [
+          const Positioned(right: 10,bottom: 10,
+            child: AppGradientShapes(),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ProjectHeader(
+                  model: model,
+                  project: project,
+                ),
+                ScreenshotsWidget(
+                  project: project,
+                  model: model,
+                ),
+                ProjectContentWidget(
+                  project: project,
+                ),
+              ],
             ),
-            ScreenshotsWidget(
-              project: project,
-              model: model,
-            ),
-            ProjectContentWidget(
-              project: project,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

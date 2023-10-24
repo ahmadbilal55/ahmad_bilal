@@ -194,6 +194,9 @@ final skills = [
       "Git | Github",
       "Jira | Agile Development",
       "Stacked Architecture",
+      "Stripe | Agora",
+      "Firebase | DPO",
+      "Clean Code | SOLID",
       "Test Driven Development",
       "Provider | Bloc | GetX",
       "Adaptive and Responsive UI",
@@ -213,7 +216,7 @@ final skills = [
       "Functions in Javascript",
       "Cloud Messaging",
       "Storage | Hosting",
-      "Crashlytics",
+      "Crashlytics | Analytics",
     ],
   ),
   Skill(
