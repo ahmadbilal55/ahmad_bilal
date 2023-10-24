@@ -131,6 +131,11 @@ List<ProjectModel> get projects {
 
 List<TestimonialModel> testimonials = [
   TestimonialModel(
+    clientName: "Paul André Savoie",
+    testimony: "Working with Ahmed has been an absolute pleasure – his speed, genius, and infectious personality have been a tremendous asset to our team.",
+    rating: 4.8,
+  ),
+  TestimonialModel(
     clientName: "Ekaterina Smirnova",
     testimony:"Amazing job!!! He exceeded all expectations, and was very lenient with my busy timetable. Completed the job very quickly and with the best quality. Great communication. Would definitely hire again!!! Thank you.",
     rating: 5,
