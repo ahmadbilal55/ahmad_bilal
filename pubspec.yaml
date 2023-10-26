@@ -56,6 +56,7 @@ flutter:
     - assets/projects/shades/
     - assets/projects/angels/
     - assets/projects/fufa/
+    - assets/projects/resident/
     - assets/projects/secret_days/
 
   # An image asset can refer to one or more resolution-specific "variants", see

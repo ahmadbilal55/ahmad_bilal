@@ -18,6 +18,7 @@ class Paths {
   static const shades = "assets/projects/shades";
   static const angels = "assets/projects/angels";
   static const fufa = "assets/projects/fufa";
+  static const resident = "assets/projects/resident";
   static const secretDays = "assets/projects/secret_days";
 
   static const ahmadBilal = "assets/images/ahmad_bilal.png";

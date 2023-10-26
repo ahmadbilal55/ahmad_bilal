@@ -6,6 +6,31 @@ import 'package:flutter/material.dart';
 
 List<ProjectModel> get projects {
   List<ProjectModel> projects = List.empty(growable: true);
+  ProjectModel resident = const ProjectModel(
+      techStack: [
+        'Flutter',
+        'Dart',
+        'Stripe',
+        'Firestore',
+        'Crashlytics',
+        'Analytics',
+        'Appcheck',
+        'FCM',
+      ],
+      platforms: ['Android', 'iOS'],
+      splashPath: '${Paths.resident}/resident.png',
+      projectPrimaryColor: Color(0xFF0A84FF),
+      logoPath: '${Paths.resident}/resident.png',
+      title: 'Resident',
+      description: 'Democracy in the palm of your hands',
+      screenshots: [
+        "${Paths.resident}/01.png",
+        "${Paths.resident}/02.png",
+        "${Paths.resident}/03.png",
+        "${Paths.resident}/04.png",
+        "${Paths.resident}/05.png",
+        "${Paths.resident}/06.png",
+      ],);
   ProjectModel shades = const ProjectModel(
     techStack: [
       'Flutter',
@@ -17,9 +42,9 @@ List<ProjectModel> get projects {
     ],
     platforms: ['Android', 'iOS'],
     title: 'Shades',
-    splashPath: '${Paths.shades}/00.png',
+    splashPath: '${Paths.shades}/01.png',
     screenshots: [
-      '${Paths.shades}/00.png',
+      '${Paths.shades}/resident.png',
       '${Paths.shades}/01.png',
       '${Paths.shades}/02.png',
       '${Paths.shades}/03.png',
@@ -50,9 +75,9 @@ List<ProjectModel> get projects {
     ],
     platforms: ['Android', 'iOS'],
     title: 'Angels',
-    splashPath: '${Paths.angels}/00.png',
+    splashPath: '${Paths.angels}/resident.png',
     screenshots: [
-      '${Paths.angels}/00.png',
+      '${Paths.angels}/resident.png',
       '${Paths.angels}/01.png',
       '${Paths.angels}/02.png',
       '${Paths.angels}/03.png',
@@ -124,7 +149,7 @@ List<ProjectModel> get projects {
     projectPrimaryColor: Color(0xFF8C0083),
   );
 
-  projects.addAll([angels, shades, fufa, secretDays]);
+  projects.addAll([resident,angels, shades, fufa, secretDays]);
 
   return projects;
 }
@@ -132,12 +157,14 @@ List<ProjectModel> get projects {
 List<TestimonialModel> testimonials = [
   TestimonialModel(
     clientName: "Paul André Savoie",
-    testimony: "Working with Ahmed has been an absolute pleasure – his speed, genius, and infectious personality have been a tremendous asset to our team.",
+    testimony:
+        "Working with Ahmed has been an absolute pleasure – his speed, genius, and infectious personality have been a tremendous asset to our team.",
     rating: 4.8,
   ),
   TestimonialModel(
     clientName: "Ekaterina Smirnova",
-    testimony:"Amazing job!!! He exceeded all expectations, and was very lenient with my busy timetable. Completed the job very quickly and with the best quality. Great communication. Would definitely hire again!!! Thank you.",
+    testimony:
+        "Amazing job!!! He exceeded all expectations, and was very lenient with my busy timetable. Completed the job very quickly and with the best quality. Great communication. Would definitely hire again!!! Thank you.",
     rating: 5,
   ),
   TestimonialModel(
@@ -148,7 +175,8 @@ List<TestimonialModel> testimonials = [
   ),
   TestimonialModel(
     clientName: "Jarod Hydron",
-    testimony:"The project was completed perfectly! Ahmad is an expert in the sector: competent, attentive to details and always available. I recommend him to everyone",
+    testimony:
+        "The project was completed perfectly! Ahmad is an expert in the sector: competent, attentive to details and always available. I recommend him to everyone",
     rating: 5,
   ),
   TestimonialModel(
@@ -159,7 +187,7 @@ List<TestimonialModel> testimonials = [
   ),
   TestimonialModel(
     clientName: "William Hannah",
-    testimony:"Ahmad is great. Highly recommended.",
+    testimony: "Ahmad is great. Highly recommended.",
     rating: 5,
   ),
   TestimonialModel(
@@ -256,8 +284,7 @@ final skills = [
     title: "Kotlin",
     experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
     description: '',
-    slogan:
-        "Easy to Read, Fast Development, Little to None Boilerplate.",
+    slogan: "Easy to Read, Fast Development, Little to None Boilerplate.",
     skills: [
       "Java | Kotlin | Xml",
       "Git | Github",
