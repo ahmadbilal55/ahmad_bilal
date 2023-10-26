@@ -44,7 +44,7 @@ List<ProjectModel> get projects {
     title: 'Shades',
     splashPath: '${Paths.shades}/01.png',
     screenshots: [
-      '${Paths.shades}/resident.png',
+      '${Paths.shades}/00.png',
       '${Paths.shades}/01.png',
       '${Paths.shades}/02.png',
       '${Paths.shades}/03.png',
@@ -77,7 +77,7 @@ List<ProjectModel> get projects {
     title: 'Angels',
     splashPath: '${Paths.angels}/resident.png',
     screenshots: [
-      '${Paths.angels}/resident.png',
+      '${Paths.angels}/00.png',
       '${Paths.angels}/01.png',
       '${Paths.angels}/02.png',
       '${Paths.angels}/03.png',
