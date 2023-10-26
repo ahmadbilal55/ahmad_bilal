@@ -26,38 +26,48 @@ class DesktopLayout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,children: [
-                    ShowUp(
-                      delay: 600,
-                      child: Text(
-                        Strings.name,
-                        style: context.theme.textTheme.bigTitles.hugeTitle
-                            .copyWith(
-                          color: context.theme.tints.blue,
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ShowUp(
+                          delay: 600,
+                          child: Text(
+                            Strings.name,
+                            style: context.theme.textTheme.bigTitles.hugeTitle
+                                .copyWith(
+                              color: context.theme.tints.blue,
+                            ),
+                          ),
                         ),
-                      ),
+                        ShowUp(
+                          delay: 1200,
+                          child: Text(
+                            Strings.catchPhrase,
+                            maxLines: 2,
+                            textAlign: TextAlign.center,
+                            style: context.theme.textTheme.headlines.headline
+                                .copyWith(
+                              color: context.theme.labels.primary,
+                              letterSpacing: 2,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    ShowUp(
-                      delay: 1200,
-                      child: Text(
-                        Strings.catchPhrase,
-                        maxLines: 2,
-                        textAlign: TextAlign.center,
-                        style:
-                        context.theme.textTheme.headlines.headline.copyWith(
-                          color: context.theme.labels.primary,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    ),],)),
-                  AppGradientShapes(),
+                  ),
+                  const AppGradientShapes(),
                 ],
               ),
             ),
           ),
-          Expanded(child: Image.asset(Paths.ahmadBilal,height: screenHeight,fit: BoxFit.fitHeight,))
+          Expanded(
+              child: Image.asset(
+            Paths.ahmadBilal,
+            height: screenHeight,
+            fit: BoxFit.fitHeight,
+          ))
         ],
       ),
     );

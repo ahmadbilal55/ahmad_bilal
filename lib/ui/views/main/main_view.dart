@@ -1,4 +1,5 @@
 import 'package:ahmad_bilal/app/extensions.dart';
+import 'package:ahmad_bilal/ui/views/about_me/about_me_view.dart';
 import 'package:ahmad_bilal/ui/views/contact/contact_view.dart';
 import 'package:ahmad_bilal/ui/views/home/home_view.dart';
 import 'package:ahmad_bilal/ui/views/main/main_viewmodel.dart';
@@ -36,6 +37,7 @@ class HomeView extends StatelessWidget {
                       children: [
                         SizedBox(height: context.mediaQuery.size.height,),
                         Divider(height: 0,color: context.theme.tints.blue,),
+                        const AboutMeView(),
                         const ProjectsView(),
                         const SkillsView(),
                         const TestimonialsView(),
