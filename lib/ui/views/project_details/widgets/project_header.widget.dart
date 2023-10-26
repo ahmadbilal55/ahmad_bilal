@@ -1,3 +1,4 @@
+import 'package:ahmad_bilal/app/extensions.dart';
 import 'package:ahmad_bilal/models/project_model.dart';
 import 'package:ahmad_bilal/ui/views/project_details/project_details_viewmodel.dart';
 import 'package:flutter/material.dart';
@@ -36,11 +37,7 @@ class ProjectHeader extends StatelessWidget {
           ),
           Text(
             project.title,
-            style: TextStyle(
-              color: project.projectPrimaryColor,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+            style: context.theme.textTheme.headlines.headlineBold.copyWith(color: project.projectPrimaryColor),
           ),
         ],
       ),
