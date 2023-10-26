@@ -7,30 +7,31 @@ import 'package:flutter/material.dart';
 List<ProjectModel> get projects {
   List<ProjectModel> projects = List.empty(growable: true);
   ProjectModel resident = const ProjectModel(
-      techStack: [
-        'Flutter',
-        'Dart',
-        'Stripe',
-        'Firestore',
-        'Crashlytics',
-        'Analytics',
-        'Appcheck',
-        'FCM',
-      ],
-      platforms: ['Android', 'iOS'],
-      splashPath: '${Paths.resident}/resident.png',
-      projectPrimaryColor: Color(0xFF0A84FF),
-      logoPath: '${Paths.resident}/resident.png',
-      title: 'Resident',
-      description: 'Democracy in the palm of your hands',
-      screenshots: [
-        "${Paths.resident}/01.png",
-        "${Paths.resident}/02.png",
-        "${Paths.resident}/03.png",
-        "${Paths.resident}/04.png",
-        "${Paths.resident}/05.png",
-        "${Paths.resident}/06.png",
-      ],);
+    techStack: [
+      'Flutter',
+      'Dart',
+      'Stripe',
+      'Firestore',
+      'Crashlytics',
+      'Analytics',
+      'Appcheck',
+      'FCM',
+    ],
+    platforms: ['Android', 'iOS'],
+    splashPath: '${Paths.resident}/resident.png',
+    projectPrimaryColor: Color(0xFF0A84FF),
+    logoPath: '${Paths.resident}/resident.png',
+    title: 'Resident',
+    description: 'Democracy in the palm of your hands',
+    screenshots: [
+      "${Paths.resident}/01.png",
+      "${Paths.resident}/02.png",
+      "${Paths.resident}/03.png",
+      "${Paths.resident}/04.png",
+      "${Paths.resident}/05.png",
+      "${Paths.resident}/06.png",
+    ],
+  );
   ProjectModel shades = const ProjectModel(
     techStack: [
       'Flutter',
@@ -149,7 +150,7 @@ List<ProjectModel> get projects {
     projectPrimaryColor: Color(0xFF8C0083),
   );
 
-  projects.addAll([resident,angels, shades, fufa, secretDays]);
+  projects.addAll([resident, angels, shades, fufa, secretDays]);
 
   return projects;
 }
@@ -245,22 +246,9 @@ final skills = [
       "Cloud Messaging",
       "Storage | Hosting",
       "Crashlytics | Analytics",
-    ],
-  ),
-  Skill(
-    logo: "assets/images/dart.png",
-    title: "Dart",
-    experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
-    description: '',
-    slogan:
-        "Extremely Robust, Well-Received by Users, High Quality and Commercially Viable",
-    skills: [
-      "Java | Kotlin | Xml",
-      "Git | Github",
-      "Jira | Agile Development",
-      "Android Jetpack",
-      "Architectural Patterns",
-      "Responsive UI"
+      "Appcheck | Remote Config",
+      "Performance Monitoring",
+      "Test Lab | App Distribution",
     ],
   ),
   Skill(
@@ -280,34 +268,22 @@ final skills = [
     ],
   ),
   Skill(
-    logo: "assets/images/kotlin.png",
-    title: "Kotlin",
-    experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
-    description: '',
-    slogan: "Easy to Read, Fast Development, Little to None Boilerplate.",
-    skills: [
-      "Java | Kotlin | Xml",
-      "Git | Github",
-      "Jira | Agile Development",
-      "Android Jetpack",
-      "Architectural Patterns",
-      "Responsive UI"
-    ],
-  ),
-  Skill(
-    logo: "assets/images/nodejs.png",
-    title: "NodeJs",
-    experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
-    description: '',
-    slogan:
-        "Widely Used, Warmly Accepted, Great Solutions and Awesome Performance.",
-    skills: [
-      "Java | Kotlin | Xml",
-      "Git | Github",
-      "Jira | Agile Development",
-      "Android Jetpack",
-      "Architectural Patterns",
-      "Responsive UI"
-    ],
-  ),
+      logo: "assets/images/nodejs.png",
+      title: "NodeJs",
+      experience: "2019 - Present (${DateTime.now().year - 2019} Years)",
+      description: '',
+      slogan:
+          "Widely Used, Warmly Accepted, Great Solutions and Awesome Performance.",
+      skills: [
+        "JavaScript | Node.js Modules",
+        "Asynchronous Programming",
+        "RESTful API Design",
+        "NPM| Database Integration",
+        "Authentication | Authorization",
+        "Error Handling",
+        "Security Best Practices | Debugging",
+        "Deployment | Hosting",
+        "Firebase Cloud Functions",
+        "Scalability"
+      ]),
 ];

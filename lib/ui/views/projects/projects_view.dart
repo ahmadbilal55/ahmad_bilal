@@ -7,37 +7,43 @@ import 'package:stacked/stacked.dart';
 
 import 'projects_view_model.dart';
 
-class ProjectsView extends StatelessWidget {
+class ProjectsView extends StackedView<ProjectsViewModel>{
+
   const ProjectsView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ViewModelBuilder<ProjectsViewModel>.reactive(
-      viewModelBuilder: () => ProjectsViewModel(),
-      builder: (context, model, child) {
-        var screenHeight = MediaQuery.of(context).size.height;
-        return Container(
-          color: context.theme.backgrounds.primary,
-          height: screenHeight,
-          width: double.infinity,
-          child: Center(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: 1200,
-                minHeight: screenHeight,
-              ),
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ScreenTitle(title: 'Projects'),
-                  ProjectsListWidget(),
-                  AndWidget(),
-                ],
-              ),
-            ),
+  Widget builder(BuildContext context, ProjectsViewModel viewModel, Widget? child) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    return Container(
+      color: context.theme.backgrounds.primary,
+      height: screenHeight,
+      width: double.infinity,
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 1400,
+            minHeight: screenHeight,
           ),
-        );
-      },
+          child: const Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ScreenTitle(title: 'Projects'),
+              ProjectsListWidget(),
+              AndWidget(),
+            ],
+          ),
+        ),
+      ),
     );
   }
+
+  @override
+  void onViewModelReady(ProjectsViewModel viewModel) {
+    viewModel.onViewModelReady();
+    super.onViewModelReady(viewModel);
+  }
+
+  @override
+  ProjectsViewModel viewModelBuilder(BuildContext context) =>ProjectsViewModel();
+
 }

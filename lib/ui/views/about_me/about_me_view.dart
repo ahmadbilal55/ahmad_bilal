@@ -21,7 +21,7 @@ class AboutMeView extends StackedView<AboutMeViewModel> {
         child: Center(
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              maxWidth: 1200,
+              maxWidth: 1400,
               minHeight: screenHeight,
             ),
             child: ScreenTypeLayout.builder(

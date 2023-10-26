@@ -20,7 +20,7 @@ class ContactView extends StackedView<ContactViewModel> {
       width: double.maxFinite,
       padding: const EdgeInsets.all(40),
       child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 1200),
+        constraints: const BoxConstraints(maxWidth: 1400),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

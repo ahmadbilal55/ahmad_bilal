@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:stacked/stacked.dart';
 
-class ProjectsViewModel extends BaseViewModel {
+class TestimonialsViewModel extends BaseViewModel{
   late final ScrollController scrollController;
 
-  void onViewModelReady() {
+  void onViewModelReady(){
     scrollController = ScrollController();
   }
 
