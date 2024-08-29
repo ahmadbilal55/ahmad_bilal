@@ -26,7 +26,7 @@ class Strings {
       "https://stackoverflow.com/users/15742019/ahmad-bilal";
   static const String linkedInProfileUrl =
       "https://www.linkedin.com/in/ahmad-bilal-b5a421201/";
-  static const resumeUrl = 'https://drive.google.com/file/d/1DTzyFcFPnXJg2hwOhigl9VwZ_WDbtxyK/view?usp=share_link';
+  static const resumeUrl = 'https://drive.google.com/file/d/1rfX4EojUoFrF8UEF1p6BCtj8zYnPiIaN/view?usp=sharing';
   static const String githubProfileUrl = "https://github.com/ahmadbilal55";
   static const String viewMore = "View More";
   static const String hireAhmad = 'Hire Ahmad';
